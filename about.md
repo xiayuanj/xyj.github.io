@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Another minimal style of Jekyll theme for writers.
+-I am currently a Ph.D. candidate in Cyberspace Security at Guilin University of Electronic Technology.

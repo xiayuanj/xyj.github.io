@@ -5,7 +5,25 @@ layout: default
 <div class="home">
 
   {{ content }}
-
+  {% assign resume_post = site.posts | where: "name", "2026-02-27-about-me" | first %}
+  {% if resume_post %}
+    <ul class="post-list">
+      <li>
+        <h2>
+          <a href="{{ resume_post.url | relative_url }}">
+            {{ resume_post.title | escape }}
+          </a>
+        </h2>
+        <p class="post-meta">
+          <time class="dt-published" datetime="{{ resume_post.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ resume_post.date | date: "%b %-d, %Y" }}
+          </time>
+        </p>
+        <div class="post-excerpt">{{ resume_post.content }}</div>
+      </li>
+    </ul>
+  {% endif %}
+  
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}

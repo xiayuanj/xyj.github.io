@@ -42,11 +42,34 @@ author:
 
 [1] Xia Yuanjun, Dong Shi*, Peng Tao, Wang Tao. Wireless Network Abnormal Traffic Detection Method Based on Deep Transfer Reinforcement Learning[C]. 2021 17th International Conference on Mobility, Sensing and Networking (MSN), 528-535, 2021. (CCF C)
 
+## 专利成果
+
+· 董仕，夏元俊，于来行，张锦华，鲁硕，赵文清，夏钦宇.基于深度迁移强化学习无线网络异常流量检测方法：CN202110866421.2[P].2023-04-07.（授权）
+
+· 董仕，夏元俊.基于区块链的边缘计算安全系统：CN202011042708.5[P].2022-08-12.（授权）
+
+· 夏元俊，董仕，彭涛.基于生成对抗深度卷积网络的流量识别方法：CN202110160578.3[P].2021-06-01.（公开）
+
+· 董仕，夏元俊.一种SSDDQN的网络异常流量检测方法：CN202110271456.1[P].2021-06-29.（公开）
+
+· 董仕，夏元俊.一种网络入侵检测方法、装置及设备：CN202110450303.3[P].2021-07-27.（公开）
+
+· 夏钦宇，董仕，夏元俊，彭涛.一种基于会话时空特征相残差的物联网设备识别模型：CN202210695834.3[P].2022-11-11.（公开）
+
 <style>
-/* 让每篇论文自动换行、不重叠、间距正常 */
+/* 让每篇论文/专利自动换行、不重叠、间距正常 */
 .post-content p {
   margin: 0 0 12px 0 !important;
   line-height: 1.7 !important;
   text-align: justify !important;
+}
+/* 优化专利列表的项目符号样式，更贴合学术风格 */
+.post-content ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+.post-content li {
+  margin-bottom: 12px !important;
+  line-height: 1.7 !important;
 }
 </style>

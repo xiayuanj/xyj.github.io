@@ -2,6 +2,15 @@
 layout: default
 ---
 
+<!-- 渲染个人简介模块 -->
+{% assign about_me = site.posts | where: "name", "2026-02-27-about-me" | first %}
+{% if about_me %}
+  <div class="resume-section">
+    <h2>{{ about_me.title }}</h2>
+    <div class="section-content">{{ about_me.content }}</div>
+  </div>
+{% endif %}
+
 <div class="home">
   {{content}}
   

@@ -5,7 +5,7 @@ layout: default
 <div class="home">
   {{ content }}
 
-  {% assign resume_file = "2026-02-27-about-me.md" %}
+  {% assign resume_file = "2026-02-27-about-me" %}
   {% assign my_resume = site.posts | where: "name", resume_file | first %}
   
   {% if my_resume %}
@@ -23,7 +23,6 @@ layout: default
       </li>
     </ul>
   {% endif %}
-</div>
 
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
@@ -35,6 +34,7 @@ layout: default
     <ul class="post-list">
       {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
+      {% if post.name != resume_file %}
       <li>
         <h2>
           <a href="{{ post.url | relative_url }}">

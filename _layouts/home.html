@@ -1,22 +1,76 @@
 ---
-layout: post
-title: 个人简介|夏元俊
-date: 2026-02-27
+layout: default
 ---
-<p>我长期聚焦隐私保护机器学习、网络入侵检测与网络流量识别方向的研究，相关成果已发表于 IEEE TMC、IEEE TDSC、IEEE IoT-J 等国际顶级期刊，ResearchGate 总被引量达 461 次。为推动网络安全与隐私保护领域的学术交流，我积极参与多项国家级科研项目，并与国内外多所高校及研究机构保持密切合作，欢迎通过邮箱 <a href="mailto:xiaujun@163.com" style="color: #66d9ef; text-decoration: underline;">xiaujun@163.com</a> 与我联系学术合作与交流事宜。</p>
 
-Jekyll also offers powerful support for code snippets:
+<div class="home">
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+  {{ content }}
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+    <!-- 中文个人介绍（置顶显示） -->
+    <div class="personal-intro" style="margin-bottom: 40px; line-height: 1.8; font-size: 16px;">
+      <!-- 标题跳转至 about-me.md 页面 -->
+      <h1 style="font-size: 24px; margin-bottom: 20px; font-weight: 600;">
+        <a href="/2026/02/27/about-me.html" style="color: #66d9ef; text-decoration: none;">
+          个人主页 | 夏元俊
+        </a>
+      </h1>
+      <p>我长期聚焦隐私保护机器学习、网络入侵检测与网络流量识别方向的研究，相关成果已发表于 IEEE TMC、IEEE TDSC、IEEE IoT-J 等国际顶级期刊，ResearchGate 总被引量达 461 次。为推动网络安全与隐私保护领域的学术交流，我积极参与多项国家级科研项目，并与国内外多所高校及研究机构保持密切合作，欢迎通过邮箱 <a href="mailto:xiaujun@163.com" style="color: #66d9ef; text-decoration: underline;">xiaujun@163.com</a> 与我联系学术合作与交流事宜。</p>
+    </div>
 
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+  {% if site.paginate %}
+    {% assign posts = paginator.posts %}
+  {% else %}
+    {% assign posts = site.posts %}
+  {% endif %}
+
+  {%- if posts.size > 0 -%}
+    <ul class="post-list">
+      {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+      {%- for post in posts -%}
+      <li>
+        <h2>
+          <a href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h2>
+        <p class="post-meta">
+          <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ post.date | date: date_format }}
+          </time>
+          {%- if jekyll.environment == "production" and site.disqus -%}
+            • <a href="{{ post.url | relative_url }}#disqus_thread">
+                <span class="disqus-comment-count" data-disqus-url="{{ post.url | absolute_url }}"></span>
+              </a>
+          {%- endif -%}
+        </p>
+        {%- if post.show_excerpts != false -%}
+          <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    {% if site.paginate %}
+      <div class="pager">
+        <ul class="pagination">
+        {%- if paginator.previous_page %}
+          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
+        {%- else %}
+          <li><div class="pager-edge">•</div></li>
+        {%- endif %}
+          <li><div class="current-page">{{ paginator.page }}</div></li>
+        {%- if paginator.next_page %}
+          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
+        {%- else %}
+          <li><div class="pager-edge">•</div></li>
+        {%- endif %}
+        </ul>
+      </div>
+    {%- endif %}
+
+  {%- endif -%}
+  
+  {%- if jekyll.environment == "production" and site.disqus -%}
+    <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>
+  {%- endif -%}
+</div>

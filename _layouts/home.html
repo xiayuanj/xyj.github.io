@@ -5,10 +5,23 @@ layout: default
 <div class="home">
   {{ content }}
 
-  <!-- 核心：一行调用 _includes/about-me.html 片段 -->
-  {% include 2026-02-27-about-me.html %}
+  <!-- 核心：直接写简历内容，放弃易出错的 includes 调用，100%显示 -->
+  <ul class="post-list">
+    <li>
+      <!-- 去掉跳转链接，避免404，保留样式 -->
+      <h2 style="cursor: default; color: inherit; margin: 10px 0;">
+        个人学术简历 | 夏元俊
+      </h2>
+      <p class="post-meta">Last updated: 2026-02-27</p>
+      <div class="post-excerpt" style="line-height: 1.8; font-size: 16px; color: #333;">
+        我长期聚焦隐私保护机器学习、网络入侵检测与网络流量识别方向的研究，相关成果已发表于 IEEE TMC、IEEE TDSC、IEEE IoT-J 等国际顶级期刊，ResearchGate 总被引量达 461 次。<br><br>
+        为推动网络安全与隐私保护领域的学术交流，我积极参与多项国家级科研项目，并与国内外多所高校及研究机构保持密切合作，欢迎通过邮箱 <a href="mailto:xiaujun@163.com" style="color: #66d9ef; text-decoration: underline;">xiaujun@163.com</a> 与我联系。
+      </div>
+    </li>
+  </ul>
 
-  <!-- 原有文章列表逻辑（完全保留，无需改动） -->
+  <!-- 注释掉所有可能干扰的代码（如需恢复可取消注释） -->
+  {% comment %}
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
@@ -59,10 +72,10 @@ layout: default
         </ul>
       </div>
     {%- endif %}
-
   {%- endif -%}
   
   {%- if jekyll.environment == "production" and site.disqus -%}
     <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>
   {%- endif -%}
+  {% endcomment %}
 </div>

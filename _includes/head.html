@@ -34,6 +34,48 @@
 {% endunless %}
 <!-- End selecting skin -->
 
+<!-- 新增：适配示例的柔和字体配色（核心修改点） -->
+<style>
+  /* 正文文字：示例同款柔和深灰，替代生硬纯黑 */
+  body,
+  .post-excerpt,
+  .post-content,
+  .content p,
+  .content li,
+  table td {
+    color: #444444 !important; /* 示例里的柔和深灰，护眼不生硬 */
+    line-height: 1.7 !important; /* 行高舒展，和示例阅读体验一致 */
+    font-size: 16px !important; /* 字体大小适配，不挤不松 */
+  }
+
+  /* 标题文字：稍深一点，突出层次但不刺眼 */
+  h1, h2, h3, h4, h5, h6,
+  .site-title,
+  .section h2,
+  table th {
+    color: #333333 !important; /* 比正文稍深，层次清晰 */
+    font-weight: 600 !important; /* 标题字重适中，不厚重 */
+  }
+
+  /* 链接文字：示例同款专业蓝色，学术感更强 */
+  a,
+  .post-excerpt a,
+  .content a,
+  table a {
+    color: #0066cc !important; /* 示例里的蓝色链接，替代原青蓝色 */
+    text-decoration: underline !important;
+  }
+  a:hover {
+    color: #004c99 !important; /* hover加深，交互更明显 */
+  }
+
+  /* 侧边栏文字：稍浅，不抢正文焦点 */
+  .sidebar p,
+  .sidebar .contact-links p {
+    color: #555555 !important;
+  }
+</style>
+
 <script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
 
 {% include custom-head.html %}

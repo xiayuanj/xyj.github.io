@@ -4,6 +4,7 @@ layout: default
 
 <div class="home">
   {{content}}
+  
   <ul class="post-list">
     <li>
       <a href="/2026/02/27/about-me.md" class="post-link">
@@ -17,7 +18,6 @@ layout: default
       </div>
     </li>
   </ul>
-  {% endif %}
   
   {% if site.paginate %}
     {% assign posts = paginator.posts %}

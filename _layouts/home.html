@@ -2,32 +2,13 @@
 layout: default
 ---
 
-<!-- 渲染个人简介模块 -->
-{% assign about_me = site.posts | where: "name", "2026-02-27-about-me" | first %}
-{% if about_me %}
-  <div class="resume-section">
-    <h2>{{ about_me.title }}</h2>
-    <div class="section-content">{{ about_me.content }}</div>
-  </div>
-{% endif %}
-
 <div class="home">
-  {{content}}
-  
-  <ul class="post-list">
-    <li>
-      <a href="/2026/02/27/about-me.html" class="post-link">
-      <h2>
-        个人学术简历 | 夏元俊
-        </a>
-      </h2>
-      <p class="post-meta">Last updated: 2026-02-27</p>
-      <div class="post-excerpt">
-        我长期聚焦隐私保护机器学习、网络入侵检测与网络流量识别方向的研究，相关成果已发表于 IEEE TMC、IEEE TDSC、IEEE IoT-J 等国际顶级期刊，ResearchGate 总被引量达 461 次。为推动网络安全与隐私保护领域的学术交流，我积极参与多项国家级科研项目，并与国内外多所高校及研究机构保持密切合作，欢迎通过邮箱 <a href="mailto:xiaujun@163.com" style="color: #66d9ef; text-decoration: underline;">xiaujun@163.com</a> 与我联系。
-      </div>
-    </li>
-  </ul>
-  
+  {{ content }}
+
+  <!-- 核心：一行调用 _includes/about-me.html 片段 -->
+  {% include about-me.html %}
+
+  <!-- 原有文章列表逻辑（完全保留，无需改动） -->
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
@@ -56,7 +37,7 @@ layout: default
         </p>
         {%- if post.show_excerpts != false -%}
           <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
-        {%- endif -%}
+        {%- endif %}
       </li>
       {%- endfor -%}
     </ul>

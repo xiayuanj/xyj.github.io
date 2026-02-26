@@ -6,11 +6,16 @@ layout: default
 
   {{ content }}
 
-  <!-- 中文个人介绍（置顶显示） -->
-  <div class="personal-intro" style="margin-bottom: 40px; line-height: 1.8; font-size: 16px;">
-    <h1 style="font-size: 24px; color: #0066cc; margin-bottom: 20px; font-weight: 600;">个人主页 | 夏元俊</h1>
-    <p>我长期聚焦隐私保护机器学习、网络入侵检测与网络流量识别方向的研究，相关成果已发表于 IEEE TMC、IEEE TDSC、IEEE IoT-J 等国际顶级期刊，ResearchGate 总被引量达 461 次。为推动网络安全与隐私保护领域的学术交流，我积极参与多项国家级科研项目，并与国内外多所高校及研究机构保持密切合作，欢迎通过邮箱 <a href="mailto:xiaujun@163.com" style="color: #0066cc; text-decoration: underline;">xiaujun@163.com</a> 与我联系学术合作与交流事宜。</p>
-  </div>
+    <!-- 中文个人介绍（置顶显示） -->
+    <div class="personal-intro" style="margin-bottom: 40px; line-height: 1.8; font-size: 16px;">
+      <!-- 标题跳转至 about-me.md 页面 -->
+      <h1 style="font-size: 24px; margin-bottom: 20px; font-weight: 600;">
+        <a href="/2026/02/27/about-me.html" style="color: #66d9ef; text-decoration: none;">
+          个人主页 | 夏元俊
+        </a>
+      </h1>
+      <p>我长期聚焦隐私保护机器学习、网络入侵检测与网络流量识别方向的研究，相关成果已发表于 IEEE TMC、IEEE TDSC、IEEE IoT-J 等国际顶级期刊，ResearchGate 总被引量达 461 次。为推动网络安全与隐私保护领域的学术交流，我积极参与多项国家级科研项目，并与国内外多所高校及研究机构保持密切合作，欢迎通过邮箱 <a href="mailto:xiaujun@163.com" style="color: #66d9ef; text-decoration: underline;">xiaujun@163.com</a> 与我联系学术合作与交流事宜。</p>
+    </div>
 
   {% if site.paginate %}
     {% assign posts = paginator.posts %}

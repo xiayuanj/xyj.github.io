@@ -3,26 +3,8 @@ layout: default
 ---
 
 <div class="home">
-  {{ content }}
 
-  {% assign resume_file = "2026-02-27-about-me" %}
-  {% assign my_resume = site.posts | where: "name", resume_file | first %}
-  
-  {% if my_resume %}
-    <ul class="post-list">
-      <li>
-        <h2>
-          <a href="{{ my_resume.url | relative_url }}" class="post-link">
-            {{ my_resume.title }} <!-- 自动读取md文件里的标题 -->
-          </a>
-        </h2>
-        <p class="post-meta">Last updated: 2026-02-27</p>
-        <div class="post-excerpt" style="line-height: 1.8; font-size: 16px;">
-          {{ my_resume.content }}
-        </div>
-      </li>
-    </ul>
-  {% endif %}
+  {{ content }}
 
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
@@ -34,7 +16,6 @@ layout: default
     <ul class="post-list">
       {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
-      {% if post.name != resume_file %}
       <li>
         <h2>
           <a href="{{ post.url | relative_url }}">

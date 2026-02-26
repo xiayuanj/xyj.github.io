@@ -29,6 +29,11 @@ exclude:
   - README.md
   - jekyll-theme-hamilton.gemspec
 
+# 新增/修改：解决文章不显示的核心配置
+future: true  # 关键：渲染未来日期的文章
+lang: zh-CN   # 关键：设置为中文环境，兼容中文内容解析
+timezone: Asia/Shanghai  # 可选：设置时区，避免日期解析偏差
+
 # Jekyll SEO Tag (Optional)
 # =========================
 twitter:
@@ -42,4 +47,3 @@ social:
     - https://www.facebook.com/ngzhio
     - https://github.com/ngzhio
 google_site_verification: u4WXQl0Eu66rsQo2kRdCNx
-lang: en

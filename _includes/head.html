@@ -43,6 +43,51 @@
 {% endunless %}
 <!-- End selecting skin -->
 
+<!-- 仅新增：侧边栏左移+正文拓宽（核心修改，其他全不变） -->
+<style>
+  /* 1. 双栏布局容器：取消最大宽度限制，占满页面 */
+  .resume-layout {
+    display: flex;
+    gap: 0 !important; /* 取消侧边栏和正文间隙 */
+    max-width: 100% !important; /* 布局占满整个页面宽度 */
+    margin: 0 !important; /* 取消默认居中边距 */
+    padding: 0 !important;
+  }
+
+  /* 2. 侧边栏：移到页面最左侧，宽度不变 */
+  .sidebar {
+    width: 280px !important; /* 保留原侧边栏宽度，可按需改 */
+    flex-shrink: 0 !important;
+    margin-left: 0 !important; /* 贴紧页面最左侧 */
+    padding: 20px 15px !important; /* 内边距，内容不贴边 */
+  }
+
+  /* 3. 正文区域：彻底拓宽，占满剩余所有宽度 */
+  .content {
+    flex: 1 !important; /* 占满侧边栏右侧所有空间 */
+    max-width: calc(100% - 280px) !important; /* 宽度=页面总宽-侧边栏宽 */
+    width: calc(100% - 280px) !important;
+    padding: 20px 30px !important; /* 正文内边距，避免贴边 */
+    margin: 0 !important; /* 取消默认边距 */
+  }
+
+  /* 4. 响应式适配：手机端恢复原布局，避免错乱 */
+  @media (max-width: 768px) {
+    .resume-layout {
+      flex-direction: column !important;
+    }
+    .sidebar {
+      width: 100% !important;
+      margin-left: 0 !important;
+    }
+    .content {
+      max-width: 100% !important;
+      width: 100% !important;
+      margin-left: 0 !important;
+    }
+  }
+</style>
+
 <script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
 
 {% include custom-head.html %}

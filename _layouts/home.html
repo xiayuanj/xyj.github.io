@@ -5,7 +5,7 @@ layout: default
 <div class="home">
   {{ content }}
 
-  {% assign resume_file = "2026-02-27-about-me" %}
+  {% assign resume_file = "2026-02-27-about-me.md" %}
   {% assign my_resume = site.posts | where: "name", resume_file | first %}
   
   {% if my_resume %}

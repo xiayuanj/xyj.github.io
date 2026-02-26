@@ -2,6 +2,7 @@
 layout: post
 title: 个人主页|夏元俊
 date: 2026-02-27
+encoding: utf-8
 ---
 我目前正在从事**隐私保护机器学习**、**网络入侵检测**和**网络流量识别**方向的研究。如果您寻求任何形式的学术合作，欢迎通过邮箱 <a href="mailto:xiaujun@163.com">xiaujun@163.com</a> 与我联系。
 

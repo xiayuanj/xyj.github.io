@@ -3,26 +3,31 @@ layout: default
 ---
 
 <div class="home">
-  {{content}}
+  {{ content }}
   
-  <ul class="post-list">
-    <li>
-      <a href="/2026/02/27/about-me.html" class="post-link">
-      <h2>
-        个人学术简历 | 夏元俊
-        </a>
-      </h2>
-      <p class="post-meta">Last updated: 2026-02-27</p>
-      <div class="post-excerpt">
-        我长期聚焦隐私保护机器学习、网络入侵检测与网络流量识别方向的研究，相关成果已发表于 IEEE TMC、IEEE TDSC、IEEE IoT-J 等国际顶级期刊，ResearchGate 总被引量达 461 次。为推动网络安全与隐私保护领域的学术交流，我积极参与多项国家级科研项目，并与国内外多所高校及研究机构保持密切合作，欢迎通过邮箱 <a href="mailto:xiaujun@163.com" style="color: #66d9ef; text-decoration: underline;">xiaujun@163.com</a> 与我联系。
-      </div>
-    </li>
-  </ul>
+  <!-- 核心：读取 _posts 里的 about-me.md 文件并渲染 -->
+  {% assign about_me = site.posts | where: "name", "2026-02-27-about-me" | first %}
+  {% if about_me %}
+    <ul class="post-list">
+      <li>
+        <h2>
+          <a href="{{ about_me.url | relative_url }}" class="post-link">
+            {{ about_me.title | escape }}
+          </a>
+        </h2>
+        <p class="post-meta">Last updated: {{ about_me.date | date: "%Y-%m-%d" }}</p>
+        <div class="post-excerpt">
+          {{ about_me.content }}
+        </div>
+      </li>
+    </ul>
+  {% endif %}
   
+  <!-- 原有文章列表逻辑（保留，可显示其他 posts 内容） -->
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
-    {% assign posts = site.posts %}
+    {% assign posts = site.posts | where_exp: "post", "post.name != '2026-02-27-about-me'" %}
   {% endif %}
 
   {%- if posts.size > 0 -%}

@@ -5,7 +5,7 @@ layout: default
 <div class="home">
   {{ content }}
 
-  <!-- 核心样式：保留所有内容 + 去掉所有横线/下划线 + 修复英文排版 -->
+  <!-- 核心样式：保留所有内容 + 去掉所有横线/下划线 + 修复英文排版 + 适配全屏 -->
   <style>
     /* ========== 1. 彻底移除所有横线/下划线（包括一级标题） ========== */
     /* 移除列表项默认的分隔线 */
@@ -20,12 +20,13 @@ layout: default
     hr {
       display: none !important;
     }
-    /* 移除post-list容器的默认样式 */
+    /* 移除post-list容器的默认样式 + 全屏宽度 */
     .post-list {
       list-style: none !important;
-      padding: 0 15px !important; /* 保留少量内边距，避免内容贴边 */
+      padding: 0 !important; /* 适配全屏，取消内边距 */
       margin: 0 !important;
       border: none !important;
+      width: 100% !important; /* 列表全屏宽度 */
     }
     /* 核心：移除所有标题（h1/h2/h3）的下划线/边框 */
     .post-excerpt h1,
@@ -53,7 +54,7 @@ layout: default
       font-weight: 500 !important;
     }
 
-    /* ========== 3. 标题/内容样式优化（修复英文排版） ========== */
+    /* ========== 3. 标题/内容样式优化（修复英文排版 + 全屏适配） ========== */
     /* 二级标题（如科研成果）样式 */
     .post-excerpt h2 {
       font-size: 18px !important;
@@ -74,7 +75,7 @@ layout: default
       color: #333 !important;
       margin: 30px 0 15px 0 !important;
     }
-    /* 正文/列表样式 - 解决英文单词间隔问题 */
+    /* 正文/列表样式 - 解决英文单词间隔问题 + 全屏宽度 */
     .post-excerpt p, .post-excerpt li {
       font-size: 16px !important;
       line-height: 1.7 !important;
@@ -86,6 +87,7 @@ layout: default
       -ms-hyphens: auto !important;
       word-wrap: break-word !important; /* 长单词自动换行 */
       overflow-wrap: break-word !important;
+      width: 100% !important; /* 正文全屏宽度 */
     }
 
     /* ========== 4. 链接样式（保留可点击效果，仅正文链接悬浮有下划线） ========== */

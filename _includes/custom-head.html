@@ -5,41 +5,8 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 全局统一：最高优先级标题空行 + 导航栏重制 + 全页面布局同步 -->
+<!-- 全局统一：导航栏重制 + 标题间隔精准修复 + 全页面布局/留白/样式完全同步 -->
 <style>
-/* ========== 【最高优先级】强制标题空行，覆盖所有主题样式 ========== */
-/* 所有大标题（章节标题）：顶部强制空一行，和上一段内容彻底隔开 */
-.site-main h1,
-.site-main h2,
-.post-content h1,
-.post-content h2,
-.post-excerpt h1,
-.post-excerpt h2,
-.content h1,
-.content h2 {
-  margin-top: 38px !important; /* 标题上方空一行，可调整数值改间距 */
-  margin-bottom: 12px !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-/* 页面第一个标题：顶部不加间距，避免和导航栏空太多 */
-.site-main h1:first-child,
-.site-main h2:first-child,
-.post-content h1:first-child,
-.post-content h2:first-child,
-.post-excerpt h1:first-child,
-.post-excerpt h2:first-child {
-  margin-top: 0 !important;
-}
-/* 正文段落：底部加固定间距，和下一个标题隔开 */
-.site-main p,
-.post-content p,
-.post-excerpt p,
-.content p {
-  margin-bottom: 20px !important;
-  padding: 0 !important;
-}
-
 /* ========== 1. 全局基础：全页面统一纯白背景 + 布局重置 ========== */
 body,
 html {
@@ -58,7 +25,7 @@ html {
   flex-direction: column !important;
 }
 
-/* ========== 顶部导航栏（参考图样式，完全保留） ========== */
+/* ========== 核心重制：顶部导航栏（参考图样式） ========== */
 .site-header {
   background-color: #FFFFFF !important;
   border-bottom: 1px solid #EEEEEE !important;
@@ -89,7 +56,7 @@ html {
   color: #0066CC !important;
 }
 
-/* 右侧导航栏：参考图干净样式 */
+/* 右侧导航栏：去掉黑色背景，改成参考图干净样式 */
 .site-nav {
   background-color: #FFFFFF !important; /* 彻底去掉黑色背景 */
   box-shadow: none !important;
@@ -167,11 +134,13 @@ html {
   box-sizing: border-box !important;
 }
 
-/* ========== 内容样式统一 ========== */
+/* ========== 3. 全页面内容样式统一【核心修复：标题间隔】 ========== */
 .post-excerpt,
 .post-content,
 .page-content,
-.content {
+.post-excerpt *,
+.post-content *,
+.page-content * {
   font-family: inherit !important;
   line-height: 1.7 !important;
   text-align: left !important;
@@ -182,28 +151,50 @@ html {
   overflow-wrap: break-word !important;
 }
 
-/* 列表样式 */
-.post-excerpt li,
-.post-content li,
-.page-content li,
-.content li {
+/* 正文段落：增加底部间距，确保和下一个标题隔开 */
+.post-excerpt p, .post-excerpt li,
+.post-content p, .post-content li,
+.page-content p, .page-content li {
   font-size: 16px !important;
-  margin: 0 0 12px 0 !important;
+  margin: 0 0 20px 0 !important; /* 从12px改成20px，段落底部间距更大 */
   padding: 0 !important;
 }
 
-/* 三级标题样式 */
-.site-main h3,
-.post-content h3,
-.post-excerpt h3,
-.content h3 {
-  font-size: 18px !important;
-  font-weight: 600 !important;
+/* 一级标题样式 */
+.post-excerpt h1, .post-content h1, .page-content h1,
+.post-title, .page-title {
   color: #092B42 !important;
   border-bottom: none !important;
   text-decoration: none !important;
   box-shadow: none !important;
-  margin: 24px 0 8px 0 !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  margin: 0 0 15px 0 !important;
+}
+
+/* ========== 核心修复：二级标题（教育经历/科研成果）顶部强制空行 ========== */
+/* 选择器精准到内容区，优先级拉满，强制覆盖主题样式 */
+.site-main .post-excerpt h2,
+.site-main .post-content h2,
+.site-main .page-content h2 {
+  color: #092B42 !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  margin: 45px 0 12px 0 !important; /* 核心修改：顶部间距从25px改成45px，强制空一行 */
+}
+
+/* 三级标题样式 */
+.post-excerpt h3, .post-content h3, .page-content h3 {
+  color: #092B42 !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  margin: 20px 0 8px 0 !important;
 }
 
 /* 链接样式 全页面统一 */
@@ -351,13 +342,10 @@ hr {
     padding: 8px 4px !important;
   }
   /* 移动端标题间距适配 */
-  .site-main h1,
-  .site-main h2,
-  .post-content h1,
-  .post-content h2,
-  .post-excerpt h1,
-  .post-excerpt h2 {
-    margin-top: 28px !important;
+  .site-main .post-excerpt h2,
+  .site-main .post-content h2,
+  .site-main .page-content h2 {
+    margin-top: 30px !important;
   }
 }
 

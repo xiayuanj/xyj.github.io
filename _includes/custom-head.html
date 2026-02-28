@@ -5,9 +5,9 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 全局统一：全屏布局 + 侧边栏左移 + 导航栏置顶 + 纯白背景 + 表格/排版优化 -->
+<!-- 稳妥方案：拓宽页面 + 侧边栏左移 + 导航栏置顶 + 纯白背景 -->
 <style>
-/* ========== 1. 全局基础：全页面统一纯白背景 + 全屏宽度 ========== */
+/* ========== 1. 全局基础：全页面统一纯白背景 ========== */
 body,
 html {
   background-color: #FFFFFF !important;
@@ -15,40 +15,33 @@ html {
   line-height: 1.7 !important;
   margin: 0 !important;
   padding: 0 !important;
-  width: 100vw !important;
-  overflow-x: hidden !important;
 }
 
-/* ========== 2. 核心布局：全屏宽度 + 侧边栏左移（所有页面同步） ========== */
-/* 外层容器：取消最大宽度限制，占满屏幕 */
+/* ========== 2. 核心布局：大幅拓宽页面，实现“全屏”效果 ========== */
+/* 外层容器：取消最大宽度限制，让页面更宽 */
 .wrapper {
-  max-width: 100% !important;
-  width: 100% !important;
+  max-width: 95% !important; /* 改为95%，几乎占满屏幕 */
   padding-left: 0 !important;
   padding-right: 0 !important;
   margin: 0 auto !important;
 }
 
-/* 侧边栏：向左移动，贴近屏幕左侧（所有页面生效） */
+/* 侧边栏：向左移动，贴近屏幕左侧 */
 .sidebar {
-  position: fixed !important; /* 改为固定定位，始终在左侧 */
-  top: 0 !important;
-  left: 0 !important;
-  width: 180px !important; /* 缩小侧边栏宽度，更紧凑 */
-  height: 100vh !important;
+  float: left !important;
+  width: 180px !important; /* 侧边栏宽度 */
+  margin-left: -20px !important; /* 向左微调，贴近左边缘 */
   padding: 20px 15px !important;
   background-color: #FFFFFF !important;
   border-right: 1px solid #EEEEEE !important;
   box-shadow: none !important;
-  overflow-y: auto !important;
 }
 
-/* 正文区域：占满剩余宽度，无限制（所有页面生效） */
+/* 正文区域：占满剩余宽度，无限制 */
 .main-content,
 .post-content, 
 .content,
 .home .content {
-  width: calc(100% - 200px) !important; /* 减去侧边栏宽度，自适应 */
   margin-left: 200px !important; /* 对应侧边栏宽度，避免重叠 */
   padding: 20px 30px !important;
   background-color: #FFFFFF !important;
@@ -58,14 +51,11 @@ html {
 
 /* ========== 3. 导航栏：修复位置，置顶右上角 ========== */
 .site-header {
-  position: fixed !important;
-  top: 0 !important;
-  right: 0 !important;
-  width: calc(100% - 200px) !important; /* 减去侧边栏宽度 */
+  width: 100% !important;
   background-color: #FFFFFF !important;
   border-bottom: 1px solid #EEEEEE !important;
   box-shadow: none !important;
-  z-index: 100 !important; /* 确保在最上层 */
+  margin-bottom: 20px !important;
 }
 .site-nav {
   text-align: right !important; /* 导航栏右对齐 */
@@ -200,12 +190,8 @@ p, li,
   .post-content, 
   .content,
   .home .content {
-    width: 100% !important;
     margin-left: 0 !important;
     padding: 20px 15px !important;
-  }
-  .site-header {
-    width: 100% !important;
   }
   .site-nav {
     text-align: center !important;

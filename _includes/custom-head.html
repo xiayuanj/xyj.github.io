@@ -64,10 +64,11 @@ body {
   padding: 0 !important; /* 删除多余内边距，和页面留白统一 */
 }
 
-/* 1. 标题：统一为 #092B42，专业沉稳 */
+/* ========== 配色修复：统一学术风，删除杂乱颜色 ========== */
+/* 1. 标题：统一深灰，删除刺眼红色 */
 h1, h2, h3, h4, h5, h6, .site-title, .section h2,
 .post-excerpt th, .post-content th {
-  color: #092B42 !important; /* 大标题颜色改为 #092B42 */
+  color: #222222 !important; /* 标题统一深灰，层次清晰 */
   border-bottom: 2px solid #EEEEEE !important; /* 标题下划线改为极细浅灰，学术感强 */
 }
 
@@ -104,5 +105,16 @@ a:hover {
     border-bottom: 1px solid #EEEEEE !important;
     margin-bottom: 20px !important;
   }
+}
+
+/* ========== 最终修复：强制大标题颜色为 #092B42，确保生效 ========== */
+h1, h2, h3,
+.post-title,
+.page-title,
+.section h2,
+h2 a, h3 a,
+.post-list .post-title a {
+  color: #092B42 !important;
+  border-bottom-color: #EEEEEE !important;
 }
 </style>

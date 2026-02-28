@@ -5,9 +5,24 @@ layout: default
 <div class="home">
   {{ content }}
 
-  <!-- 新增：最高优先级样式 - 强制缩小期刊论文等二级标题 + 间距 + 链接样式 -->
+  <!-- 新增：最高优先级样式 - 强制缩小期刊论文等二级标题 + 间距 + 链接样式 + 科研风字体 -->
   <style>
-    /* ！最高优先级：覆盖主题默认样式，精准定位文章内的h2 */
+    /* ========== 核心：英文采用zero-shot同款无衬线字体（科研技术风） ========== */
+    /* 全局文本（英文+中文）字体适配，优先西文无衬线，中文适配微软雅黑/苹方 */
+    .post-list .post-excerpt,
+    .post-list .post-excerpt * {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+      /* 通用兼容方案：覆盖所有系统/浏览器，无需额外字体文件 */
+    }
+    /* 英文标题/链接强化：更贴合技术文档风格 */
+    .post-list .post-excerpt a,
+    .post-list .post-excerpt h2,
+    .post-list .post-excerpt h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+      font-weight: 500 !important; /* 中等字重，和zero-shot风格一致 */
+    }
+
+    /* ========== 原有样式：标题字号控制 ========== */
     .post-list .post-excerpt h2 {
       font-size: 18px !important;    /* 核心：缩小期刊论文标题 */
       font-weight: 600 !important;   /* 取消过粗，更协调 */

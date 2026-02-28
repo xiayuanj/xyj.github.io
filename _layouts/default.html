@@ -6,16 +6,12 @@
   </head>
 
   <body>
-    <!-- 整体容器：纵向布局（导航+主体） -->
     <div class="site-container">
-      <!-- 顶部导航栏（置顶） -->
       <header class="site-header">
         {% include header.html %}
       </header>
       
-      <!-- 主体区域：双栏布局（左侧侧边栏 + 右侧内容） -->
       <div class="site-body wrapper">
-        <!-- 左侧固定侧边栏 -->
         <aside class="site-sidebar" id="site-sidebar">
           {% if page.toc %}
             {% include sidebar-toc.html %}
@@ -23,10 +19,8 @@
             {% include sidebar.html %}
           {% endif %}
         </aside>
-        <!-- 右侧内容区 -->
         <main class="site-main" id="site-main" aria-label="Content" tabindex="1">
           {{ content }}
-          <!-- 页脚保留在内容区底部 -->
           <footer class="site-footer">
             {% include footer.html %}
           </footer>

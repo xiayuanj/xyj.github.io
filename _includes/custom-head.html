@@ -5,9 +5,9 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 核心保留：拓宽页面+表格基础优化 | 最终修复：全页面统一纯白背景 -->
+<!-- 调整为参考图布局：左侧固定栏 + 顶部导航 + 右侧内容区 -->
 <style>
-/* ========== 1. 全局基础：全页面统一纯白背景 ========== */
+/* ========== 1. 全局基础：全页面统一纯白背景 + 布局重置 ========== */
 body,
 html {
   background-color: #FFFFFF !important;
@@ -15,49 +15,128 @@ html {
   line-height: 1.7 !important;
   margin: 0 !important;
   padding: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
 }
 
-/* ========== 2. 导航栏：彻底改为纯白，无阴影/杂色 ========== */
-.site-header,
-.site-nav,
-.dropdown-content {
+/* ========== 2. 整体布局结构（核心修改） ========== */
+.site-container {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* 顶部导航栏：置顶 + 右对齐 + 纯白风格 */
+.site-header {
   background-color: #FFFFFF !important;
-  border-bottom: 1px solid #EEEEEE !important; /* 仅保留极细分隔线 */
-  box-shadow: none !important; /* 彻底删除阴影 */
-}
-.site-nav a, .dropbtn {
-  color: #333333 !important;
-}
-.site-nav a:hover, .current-page {
-  color: #0066CC !important;
+  border-bottom: 1px solid #EEEEEE !important;
+  box-shadow: none !important;
+  padding: 15px 30px !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+  width: calc(100% - 60px) !important;
 }
 
-/* ========== 3. 侧边栏：纯白背景，无任何杂色/边框 ========== */
-.sidebar,
-.sidebar .table-of-contents,
-.sidebar .table-of-contents li,
-.sidebar .table-of-contents a {
+/* 主体区域：双栏布局（左侧固定 + 右侧内容） */
+.site-body.wrapper {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 20px 30px !important;
+  margin: 0 !important;
+  display: flex !important;
+  gap: 40px !important; /* 侧边栏和内容区间距 */
+}
+
+/* 左侧侧边栏：固定宽度 + 粘性定位（滚动时固定） + 美化 */
+.site-sidebar#site-sidebar {
+  width: 280px !important; /* 参考图侧边栏宽度 */
+  flex: 0 0 280px !important; /* 固定宽度不缩放 */
+  position: sticky !important;
+  top: 80px !important; /* 距离顶部导航栏的距离 */
+  height: fit-content !important;
   background-color: #FFFFFF !important;
   border-right: none !important;
   box-shadow: none !important;
-  color: #666666 !important;
-}
-.sidebar .table-of-contents li {
-  border-bottom: 1px solid #EEEEEE !important; /* 仅保留目录分隔线 */
+  padding: 20px 15px !important;
+  margin: 0 !important;
 }
 
-/* ========== 4. 正文区域：纯白背景，无圆角/阴影 ========== */
-.post-content, .content {
+/* 右侧内容区：自适应宽度 + 纯白背景 */
+.site-main#site-main {
+  flex: 1 !important; /* 占满剩余宽度 */
   background-color: #FFFFFF !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  padding: 0 !important;
+  padding: 10px 20px !important;
+  max-width: calc(100% - 350px) !important;
 }
 
-/* ========== 5. 表格：彻底纯白，仅保留浅灰分隔线 ========== */
+/* ========== 3. 侧边栏内容美化（参考学术主页风格） ========== */
+/* 头像样式（如果有） */
+.site-sidebar .author-avatar img {
+  width: 160px !important;
+  height: 160px !important;
+  border-radius: 50% !important; /* 圆形头像 */
+  display: block !important;
+  margin: 0 auto 20px auto !important;
+  object-fit: cover !important;
+}
+
+/* 姓名/标题 */
+.site-sidebar .author-name {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #092B42 !important;
+  text-align: center !important;
+  margin-bottom: 10px !important;
+}
+
+/* 研究方向/简介 */
+.site-sidebar .author-bio {
+  font-size: 15px !important;
+  color: #666 !important;
+  text-align: center !important;
+  margin-bottom: 20px !important;
+  line-height: 1.6 !important;
+}
+
+/* 联系方式 */
+.site-sidebar .author-contact {
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+  padding-left: 15px !important;
+}
+.site-sidebar .author-contact a {
+  color: #0066CC !important;
+  text-decoration: none !important;
+}
+.site-sidebar .author-contact a:hover {
+  text-decoration: underline !important;
+}
+
+/* 侧边栏目录样式（保留原有目录功能） */
+.site-sidebar .table-of-contents {
+  list-style: none !important;
+  padding-left: 10px !important;
+  margin-top: 30px !important;
+}
+.site-sidebar .table-of-contents li {
+  border-bottom: 1px solid #EEEEEE !important;
+  padding: 8px 0 !important;
+}
+.site-sidebar .table-of-contents a {
+  color: #666 !important;
+  text-decoration: none !important;
+}
+.site-sidebar .table-of-contents a:hover {
+  color: #0066CC !important;
+}
+
+/* ========== 4. 保留原有功能样式（表格/标题/链接） ========== */
+/* 表格样式：纯白 + 浅灰边框 */
 table,
 table tr,
-table tr:nth-child(odd),  /* 修复奇偶行异色问题 */
+table tr:nth-child(odd),
 table tr:nth-child(even),
 table th,
 table td,
@@ -66,34 +145,29 @@ table td,
   background-color: #FFFFFF !important;
   color: #333333 !important;
   border-collapse: collapse !important;
+  width: 100% !important;
 }
 table th, table td {
-  border: 1px solid #EEEEEE !important; /* 仅保留浅灰边框，无杂色 */
+  border: 1px solid #EEEEEE !important;
   padding: 12px 8px !important;
 }
 .post-excerpt th, .post-content th {
-  color: #092B42 !important; /* 大标题颜色 #092B42 */
+  color: #092B42 !important;
   border-bottom: 2px solid #EEEEEE !important;
   font-size: 22px !important;
   font-weight: 700 !important;
 }
 
-/* ========== 6. 原有功能：拓宽页面（保留） ========== */
-.wrapper {
-  max-width: 1200px !important;
-  padding-left: 30px !important;
-  padding-right: 30px !important;
-  margin: 0 auto !important;
-}
-
-/* ========== 7. 标题：强制改为 #092B42（最高优先级） ========== */
+/* 标题样式：统一颜色 */
 h1, h2, h3, h4, h5, h6,
 .post-title, .page-title, .section h2,
 h2 a, h3 a, .post-list .post-title a {
   color: #092B42 !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
 }
 
-/* ========== 8. 链接样式：统一蓝色，无杂色 ========== */
+/* 链接样式：统一蓝色 */
 a, .post-content a, .content a {
   color: #0066CC !important;
   text-decoration: underline !important;
@@ -102,24 +176,45 @@ a:hover {
   color: #004C99 !important;
 }
 
-/* ========== 9. 响应式适配（保留） ========== */
+/* 移除多余横线/下划线 */
+hr {
+  display: none !important;
+}
+.post-list li {
+  border: none !important;
+  border-bottom: none !important;
+}
+
+/* ========== 5. 响应式适配（移动端自动堆叠） ========== */
 @media screen and (max-width: 768px) {
-  .wrapper {
+  .site-body.wrapper {
+    flex-direction: column !important;
+    padding: 10px 15px !important;
+    gap: 20px !important;
+  }
+  .site-sidebar#site-sidebar {
+    width: 100% !important;
+    flex: none !important;
+    position: static !important;
+    top: auto !important;
+    border-bottom: 1px solid #EEEEEE !important;
+    padding-bottom: 20px !important;
+  }
+  .site-main#site-main {
     max-width: 100% !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding: 0 10px !important;
+  }
+  .site-header {
+    padding: 10px 15px !important;
+    width: calc(100% - 30px) !important;
   }
   .post-excerpt td, .post-content td {
     font-size: 14px !important;
     padding: 8px 4px !important;
   }
-  .sidebar {
-    border-bottom: 1px solid #EEEEEE !important;
-    margin-bottom: 20px !important;
-  }
 }
 
-/* ========== 10. 额外修复：标签云/按钮等杂色背景 ========== */
+/* ========== 6. 额外修复：标签云/按钮等杂色背景 ========== */
 .tag-cloud a, .btn, button {
   background-color: #FFFFFF !important;
   border: 1px solid #EEEEEE !important;

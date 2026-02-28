@@ -4,27 +4,24 @@ layout: default
 
 <div class="home">
   {{ content }}
-  
-  <!-- 新增：全局样式 - 精准缩小科研成果页面的二级标题字号 -->
+
+  <!-- 新增：最高优先级样式 - 强制缩小期刊论文等二级标题 -->
   <style>
-    /* 核心：缩小科研成果页面中##开头的二级标题（期刊/会议/专利/项目） */
-    .post-content h2 {
-      font-size: 20px !important;    /* 比主页大标题小、比正文大，可按需改18/22px */
-      font-weight: 600 !important;   /* 保留加粗，保证可读性 */
-      color: #092B42 !important;     /* 保持和整体风格一致的深蓝色 */
-      margin: 25px 0 12px 0 !important; /* 适配字号的上下间距 */
+    /* ！最高优先级：覆盖主题默认样式，精准定位文章内的h2 */
+    .post-list .post-excerpt h2 {
+      font-size: 18px !important;    /* 核心：进一步缩小，比教育经历标题略大/持平 */
+      font-weight: 600 !important;   /* 取消过粗，更协调 */
+      color: #333333 !important;    /* 改为深灰，弱化视觉占比 */
+      margin: 20px 0 10px 0 !important; /* 缩小上下间距 */
+      line-height: 1.2 !important;
     }
-    /* 兜底：若误写为###三级标题，也同步控制 */
-    .post-content h3 {
-      font-size: 18px !important;
-      font-weight: 600 !important;
-      color: #092B42 !important;
-    }
-    /* 正文字号固定，形成层级对比 */
-    .post-content p, 
-    .post-content li {
+    /* 兜底：确保正文和其他标题层级清晰 */
+    .post-list .post-excerpt p,
+    .post-list .post-excerpt li {
       font-size: 16px !important;
-      line-height: 1.7 !important;
+    }
+    .post-list .post-excerpt h3 {
+      font-size: 17px !important;
     }
   </style>
   

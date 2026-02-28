@@ -81,8 +81,26 @@ layout: default
       text-decoration: underline !important;
       color: #004499 !important;
     }
+
+    /* ========== 核心6：隐藏多余元素，让内容直接显示 ========== */
+    /* 隐藏文章列表（只保留about-me的内容） */
+    .post-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    /* 隐藏文章标题（h2）和日期（post-meta），只显示内容 */
+    .post-list li h2,
+    .post-list li .post-meta {
+      display: none !important;
+    }
+    /* 让内容区域充满宽度，去掉多余缩进 */
+    .post-list .post-excerpt {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
   </style>
-  
+
   <!-- 核心：读取 _posts 里的 about-me.md 文件并渲染（保留原有逻辑） -->
   {% assign about_me = site.posts | where: "name", "2026-02-27-about-me" | first %}
   {% if about_me %}
@@ -100,8 +118,8 @@ layout: default
       </li>
     </ul>
   {% endif %}
-  
-  <!-- 原有文章列表逻辑（仅修改摘要→全文，其他不变） -->
+
+  <!-- 原有文章列表逻辑：完全隐藏，不再显示其他文章 -->
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
@@ -109,7 +127,8 @@ layout: default
   {% endif %}
 
   {%- if posts.size > 0 -%}
-    <ul class="post-list">
+    <!-- 隐藏所有其他文章，只显示about-me的内容 -->
+    <ul class="post-list" style="display: none;">
       {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <li>
@@ -137,7 +156,7 @@ layout: default
     </ul>
 
     {% if site.paginate %}
-      <div class="pager">
+      <div class="pager" style="display: none;">
         <ul class="pagination">
         {%- if paginator.previous_page %}
           <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
@@ -155,7 +174,7 @@ layout: default
     {%- endif %}
 
   {%- endif -%}
-  
+
   {%- if jekyll.environment == "production" and site.disqus -%}
     <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>
   {%- endif -%}

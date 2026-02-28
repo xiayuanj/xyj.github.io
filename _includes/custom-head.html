@@ -5,7 +5,7 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 稳妥方案：拓宽页面 + 侧边栏左移 + 导航栏置顶 + 纯白背景 -->
+<!-- 核心保留：拓宽页面+表格基础优化 | 最终修复：全页面统一纯白背景 -->
 <style>
 /* ========== 1. 全局基础：全页面统一纯白背景 ========== */
 body,
@@ -17,91 +17,41 @@ html {
   padding: 0 !important;
 }
 
-/* ========== 2. 核心布局：大幅拓宽页面，实现“全屏”效果 ========== */
-/* 外层容器：取消最大宽度限制，让页面更宽 */
-.wrapper {
-  max-width: 95% !important; /* 改为95%，几乎占满屏幕 */
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin: 0 auto !important;
-}
-
-/* 侧边栏：向左移动，贴近屏幕左侧 */
-.sidebar {
-  float: left !important;
-  width: 180px !important; /* 侧边栏宽度 */
-  margin-left: -20px !important; /* 向左微调，贴近左边缘 */
-  padding: 20px 15px !important;
+/* ========== 2. 导航栏：彻底改为纯白，无阴影/杂色 ========== */
+.site-header,
+.site-nav,
+.dropdown-content {
   background-color: #FFFFFF !important;
-  border-right: 1px solid #EEEEEE !important;
-  box-shadow: none !important;
-}
-
-/* 正文区域：占满剩余宽度，无限制 */
-.main-content,
-.post-content, 
-.content,
-.home .content {
-  margin-left: 200px !important; /* 对应侧边栏宽度，避免重叠 */
-  padding: 20px 30px !important;
-  background-color: #FFFFFF !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* ========== 3. 导航栏：修复位置，置顶右上角 ========== */
-.site-header {
-  width: 100% !important;
-  background-color: #FFFFFF !important;
-  border-bottom: 1px solid #EEEEEE !important;
-  box-shadow: none !important;
-  margin-bottom: 20px !important;
-}
-.site-nav {
-  text-align: right !important; /* 导航栏右对齐 */
-  padding: 10px 30px !important;
+  border-bottom: 1px solid #EEEEEE !important; /* 仅保留极细分隔线 */
+  box-shadow: none !important; /* 彻底删除阴影 */
 }
 .site-nav a, .dropbtn {
   color: #333333 !important;
-  margin-left: 20px !important;
 }
 .site-nav a:hover, .current-page {
   color: #0066CC !important;
 }
-.dropdown-content {
-  right: 0 !important;
-  left: auto !important;
-}
 
-/* ========== 4. 侧边栏细节：纯白背景，目录样式优化 ========== */
+/* ========== 3. 侧边栏：纯白背景，无任何杂色/边框 ========== */
+.sidebar,
 .sidebar .table-of-contents,
 .sidebar .table-of-contents li,
 .sidebar .table-of-contents a {
   background-color: #FFFFFF !important;
+  border-right: none !important;
   box-shadow: none !important;
   color: #666666 !important;
 }
 .sidebar .table-of-contents li {
   border-bottom: 1px solid #EEEEEE !important; /* 仅保留目录分隔线 */
 }
-.sidebar .author-avatar {
-  text-align: center !important;
-  margin-bottom: 20px !important;
-}
-.sidebar .author-avatar img {
-  border-radius: 50% !important;
-  width: 120px !important;
-  height: 120px !important;
-}
-.sidebar .author-name {
-  text-align: center !important;
-  font-size: 18px !important;
-  font-weight: 600 !important;
-  margin-bottom: 10px !important;
-}
-.sidebar .author-contact {
-  font-size: 14px !important;
-  line-height: 1.6 !important;
+
+/* ========== 4. 正文区域：纯白背景，无圆角/阴影 ========== */
+.post-content, .content {
+  background-color: #FFFFFF !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 /* ========== 5. 表格：彻底纯白，仅保留浅灰分隔线 ========== */
@@ -116,7 +66,6 @@ table td,
   background-color: #FFFFFF !important;
   color: #333333 !important;
   border-collapse: collapse !important;
-  width: 100% !important; /* 表格全屏宽度 */
 }
 table th, table td {
   border: 1px solid #EEEEEE !important; /* 仅保留浅灰边框，无杂色 */
@@ -129,14 +78,22 @@ table th, table td {
   font-weight: 700 !important;
 }
 
-/* ========== 6. 标题：强制改为 #092B42（最高优先级） ========== */
+/* ========== 6. 原有功能：拓宽页面（保留） ========== */
+.wrapper {
+  max-width: 1200px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  margin: 0 auto !important;
+}
+
+/* ========== 7. 标题：强制改为 #092B42（最高优先级） ========== */
 h1, h2, h3, h4, h5, h6,
 .post-title, .page-title, .section h2,
 h2 a, h3 a, .post-list .post-title a {
   color: #092B42 !important;
 }
 
-/* ========== 7. 链接样式：统一蓝色，无杂色 ========== */
+/* ========== 8. 链接样式：统一蓝色，无杂色 ========== */
 a, .post-content a, .content a {
   color: #0066CC !important;
   text-decoration: underline !important;
@@ -145,64 +102,20 @@ a:hover {
   color: #004C99 !important;
 }
 
-/* ========== 8. 全局排版优化：英文单词间距 + 无横线 ========== */
-/* 彻底移除所有横线/下划线（包括一级标题） */
-hr {
-  display: none !important;
-}
-h1, h2, h3, h4, h5, h6 {
-  border-bottom: none !important;
-  text-decoration: none !important;
-  box-shadow: none !important;
-}
-h1 a, h2 a, h3 a {
-  text-decoration: none !important;
-}
-
-/* 正文/列表样式 - 解决英文单词间隔问题（全局生效） */
-p, li,
-.post-excerpt p, .post-excerpt li,
-.post-content p, .post-content li {
-  font-size: 16px !important;
-  line-height: 1.7 !important;
-  margin: 0 0 12px 0 !important;
-  padding: 0 !important;
-  text-align: left !important; /* 左对齐，避免英文单词拉伸 */
-  hyphens: auto !important; /* 英文连字符换行 */
-  -webkit-hyphens: auto !important;
-  -ms-hyphens: auto !important;
-  word-wrap: break-word !important; /* 长单词自动换行 */
-  overflow-wrap: break-word !important;
-}
-
-/* ========== 9. 响应式适配：移动端自动适配 ========== */
+/* ========== 9. 响应式适配（保留） ========== */
 @media screen and (max-width: 768px) {
   .wrapper {
     max-width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  /* 移动端隐藏侧边栏/自适应 */
-  .sidebar {
-    display: none !important; /* 移动端隐藏侧边栏 */
-  }
-  .main-content,
-  .post-content, 
-  .content,
-  .home .content {
-    margin-left: 0 !important;
-    padding: 20px 15px !important;
-  }
-  .site-nav {
-    text-align: center !important;
-    padding: 10px !important;
-  }
-  .site-nav a {
-    margin: 0 10px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
   .post-excerpt td, .post-content td {
     font-size: 14px !important;
     padding: 8px 4px !important;
+  }
+  .sidebar {
+    border-bottom: 1px solid #EEEEEE !important;
+    margin-bottom: 20px !important;
   }
 }
 

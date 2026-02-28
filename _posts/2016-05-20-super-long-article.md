@@ -46,17 +46,17 @@ author:
 
 ## 专利成果
 
-· 董仕，夏元俊，于来行，张锦华，鲁硕，赵文清，夏钦宇. [基于深度迁移强化学习无线网络异常流量检测方法](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202110866421.2[P].2023-04-07.（授权）
+**·** 董仕，夏元俊，于来行，张锦华，鲁硕，赵文清，夏钦宇. [基于深度迁移强化学习无线网络异常流量检测方法](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202110866421.2[P].2023-04-07.（授权）
 
-· 董仕，夏元俊. [基于区块链的边缘计算安全系统](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202011042708.5[P].2022-08-12.（授权）
+**·** 董仕，夏元俊. [基于区块链的边缘计算安全系统](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202011042708.5[P].2022-08-12.（授权）
 
-· 夏元俊，董仕，彭涛. [基于生成对抗深度卷积网络的流量识别方法](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202110160578.3[P].2021-06-01.（公开）
+**·** 夏元俊，董仕，彭涛. [基于生成对抗深度卷积网络的流量识别方法](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202110160578.3[P].2021-06-01.（公开）
 
-· 董仕，夏元俊. [一种SSDDQN的网络异常流量检测方法](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202110271456.1[P].2021-06-29.（公开）
+**·** 董仕，夏元俊. [一种SSDDQN的网络异常流量检测方法](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202110271456.1[P].2021-06-29.（公开）
 
-· 董仕，夏元俊. [一种网络入侵检测方法、装置及设备](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202110450303.3[P].2021-07-27.（公开）
+**·** 董仕，夏元俊. [一种网络入侵检测方法、装置及设备](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202110450303.3[P].2021-07-27.（公开）
 
-· 夏钦宇，董仕，夏元俊，彭涛. [一种基于会话时空特征相残差的物联网设备识别模型](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202210695834.3[P].2022-11-11.（公开）
+**·** 夏钦宇，董仕，夏元俊，彭涛. [一种基于会话时空特征相残差的物联网设备识别模型](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202210695834.3[P].2022-11-11.（公开）
 
 
 ## 科研项目

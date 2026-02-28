@@ -5,6 +5,29 @@ layout: default
 <div class="home">
   {{ content }}
   
+  <!-- 新增：全局样式 - 精准缩小科研成果页面的二级标题字号 -->
+  <style>
+    /* 核心：缩小科研成果页面中##开头的二级标题（期刊/会议/专利/项目） */
+    .post-content h2 {
+      font-size: 20px !important;    /* 比主页大标题小、比正文大，可按需改18/22px */
+      font-weight: 600 !important;   /* 保留加粗，保证可读性 */
+      color: #092B42 !important;     /* 保持和整体风格一致的深蓝色 */
+      margin: 25px 0 12px 0 !important; /* 适配字号的上下间距 */
+    }
+    /* 兜底：若误写为###三级标题，也同步控制 */
+    .post-content h3 {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      color: #092B42 !important;
+    }
+    /* 正文字号固定，形成层级对比 */
+    .post-content p, 
+    .post-content li {
+      font-size: 16px !important;
+      line-height: 1.7 !important;
+    }
+  </style>
+  
   <!-- 核心：读取 _posts 里的 about-me.md 文件并渲染（保留原有逻辑） -->
   {% assign about_me = site.posts | where: "name", "2026-02-27-about-me" | first %}
   {% if about_me %}

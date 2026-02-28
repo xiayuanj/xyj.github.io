@@ -5,10 +5,16 @@ layout: default
 <div class="home">
   {{ content }}
 
-  <!-- 核心样式：保留所有内容 + 去掉所有横线/下划线 + 修复英文排版 + 适配全屏 -->
+  <!-- 仅保留home页面特有的小优化，布局交给custom-head全局控制 -->
   <style>
-    /* ========== 1. 彻底移除所有横线/下划线（包括一级标题） ========== */
-    /* 移除列表项默认的分隔线 */
+    /* 移除post-list容器的默认样式 + 全屏宽度 */
+    .post-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+      width: 100% !important;
+    }
     .post-list li {
       border: none !important;
       border-bottom: none !important;
@@ -16,93 +22,7 @@ layout: default
       padding: 0 !important;
       margin: 0 !important;
     }
-    /* 移除页面中所有自动生成的水平线 */
-    hr {
-      display: none !important;
-    }
-    /* 移除post-list容器的默认样式 + 全屏宽度 */
-    .post-list {
-      list-style: none !important;
-      padding: 0 !important; /* 适配全屏，取消内边距 */
-      margin: 0 !important;
-      border: none !important;
-      width: 100% !important; /* 列表全屏宽度 */
-    }
-    /* 核心：移除所有标题（h1/h2/h3）的下划线/边框 */
-    .post-excerpt h1,
-    .post-excerpt h2,
-    .post-excerpt h3 {
-      border-bottom: none !important;
-      text-decoration: none !important; /* 移除标题文字下划线 */
-      box-shadow: none !important;
-    }
-    /* 移除标题链接的下划线（包括hover状态） */
-    .post-excerpt h1 a,
-    .post-excerpt h2 a,
-    .post-excerpt h3 a {
-      text-decoration: none !important;
-    }
-
-    /* ========== 2. 字体设置（英文科研风 + 中文思源黑体） ========== */
-    /* 全局文本字体适配 */
-    .post-excerpt, .post-excerpt * {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Source Han Sans CN", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif !important;
-    }
-    /* 英文标题/链接强化 */
-    .post-excerpt a, .post-excerpt h2, .post-excerpt h3 {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif !important;
-      font-weight: 500 !important;
-    }
-
-    /* ========== 3. 标题/内容样式优化（修复英文排版 + 全屏适配） ========== */
-    /* 二级标题（如科研成果）样式 */
-    .post-excerpt h2 {
-      font-size: 18px !important;
-      font-weight: 600 !important;
-      color: #333 !important;
-      margin: 25px 0 10px 0 !important;
-      line-height: 1.2 !important;
-    }
-    /* 三级标题样式 */
-    .post-excerpt h3 {
-      font-size: 17px !important;
-      margin: 20px 0 8px 0 !important;
-    }
-    /* 一级标题样式（如果有） */
-    .post-excerpt h1 {
-      font-size: 20px !important;
-      font-weight: 600 !important;
-      color: #333 !important;
-      margin: 30px 0 15px 0 !important;
-    }
-    /* 正文/列表样式 - 解决英文单词间隔问题 + 全屏宽度 */
-    .post-excerpt p, .post-excerpt li {
-      font-size: 16px !important;
-      line-height: 1.7 !important;
-      margin: 0 0 12px 0 !important;
-      padding: 0 !important;
-      text-align: left !important; /* 左对齐，避免英文单词拉伸 */
-      hyphens: auto !important; /* 英文连字符换行 */
-      -webkit-hyphens: auto !important;
-      -ms-hyphens: auto !important;
-      word-wrap: break-word !important; /* 长单词自动换行 */
-      overflow-wrap: break-word !important;
-      width: 100% !important; /* 正文全屏宽度 */
-    }
-
-    /* ========== 4. 链接样式（保留可点击效果，仅正文链接悬浮有下划线） ========== */
-    .post-excerpt a {
-      color: #0066CC !important;
-      text-decoration: none !important;
-    }
-    /* 仅正文链接悬浮显示下划线，标题链接始终无下划线 */
-    .post-excerpt p a:hover,
-    .post-excerpt li a:hover {
-      text-decoration: underline !important;
-      color: #004499 !important;
-    }
-
-    /* ========== 5. 保留必要的标题/日期（不隐藏任何内容） ========== */
+    /* 保留必要的标题/日期样式（不隐藏任何内容） */
     .post-link {
       color: #333 !important;
       text-decoration: none !important;
@@ -154,8 +74,8 @@ layout: default
             {{ post.date | date: date_format }}
           </time>
           {%- if jekyll.environment == "production" and site.disqus -%}
-            • <a href="{{ post.url | relative_url }}#disqus_thread">
-                <span class="disqus-comment-count" data-disqus-url="{{ post.url | absolute_url }}"></span>
+            • <a href="{{ post.url | relative_url }}#disq_thread">
+                <span class="disqus-comment-count" data-disq-url="{{ post.url | absolute_url }}"></span>
               </a>
           {%- endif -%}
         </p>

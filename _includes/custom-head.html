@@ -5,7 +5,7 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 全局统一：导航栏重制 + 标题间隔精准修复 + 全页面布局/留白/样式完全同步 -->
+<!-- 全局统一：导航栏重制 + 全页面布局/留白/样式完全同步 -->
 <style>
 /* ========== 1. 全局基础：全页面统一纯白背景 + 布局重置 ========== */
 body,
@@ -134,7 +134,7 @@ html {
   box-sizing: border-box !important;
 }
 
-/* ========== 3. 全页面内容样式统一【核心修复：标题间隔】 ========== */
+/* ========== 3. 全页面内容样式统一 ========== */
 .post-excerpt,
 .post-content,
 .page-content,
@@ -150,49 +150,32 @@ html {
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
 }
-
-/* 正文段落：增加底部间距，确保和下一个标题隔开 */
 .post-excerpt p, .post-excerpt li,
 .post-content p, .post-content li,
 .page-content p, .page-content li {
   font-size: 16px !important;
-  margin: 0 0 20px 0 !important; /* 从12px改成20px，段落底部间距更大 */
+  margin: 0 0 12px 0 !important;
   padding: 0 !important;
 }
-
-/* 一级标题样式 */
-.post-excerpt h1, .post-content h1, .page-content h1,
+.post-excerpt h1, .post-excerpt h2, .post-excerpt h3,
+.post-content h1, .post-content h2, .post-content h3,
+.page-content h1, .page-content h2, .page-content h3,
 .post-title, .page-title {
   color: #092B42 !important;
   border-bottom: none !important;
   text-decoration: none !important;
   box-shadow: none !important;
   font-weight: 600 !important;
+}
+.post-excerpt h1, .post-content h1, .page-content h1, .post-title {
   font-size: 24px !important;
   margin: 0 0 15px 0 !important;
 }
-
-/* ========== 核心修复：二级标题（教育经历/科研成果）顶部强制空行 ========== */
-/* 选择器精准到内容区，优先级拉满，强制覆盖主题样式 */
-.site-main .post-excerpt h2,
-.site-main .post-content h2,
-.site-main .page-content h2 {
-  color: #092B42 !important;
-  border-bottom: none !important;
-  text-decoration: none !important;
-  box-shadow: none !important;
-  font-weight: 600 !important;
+.post-excerpt h2, .post-content h2, .page-content h2 {
   font-size: 20px !important;
-  margin: 45px 0 12px 0 !important; /* 核心修改：顶部间距从25px改成45px，强制空一行 */
+  margin: 25px 0 10px 0 !important;
 }
-
-/* 三级标题样式 */
 .post-excerpt h3, .post-content h3, .page-content h3 {
-  color: #092B42 !important;
-  border-bottom: none !important;
-  text-decoration: none !important;
-  box-shadow: none !important;
-  font-weight: 600 !important;
   font-size: 18px !important;
   margin: 20px 0 8px 0 !important;
 }
@@ -340,12 +323,6 @@ hr {
   .post-excerpt td, .post-content td, .page-content td {
     font-size: 14px !important;
     padding: 8px 4px !important;
-  }
-  /* 移动端标题间距适配 */
-  .site-main .post-excerpt h2,
-  .site-main .post-content h2,
-  .site-main .page-content h2 {
-    margin-top: 30px !important;
   }
 }
 

@@ -5,7 +5,7 @@ layout: default
 <div class="home">
   {{ content }}
   
-  <!-- 核心：读取 _posts 里的 about-me.md 文件并渲染 -->
+  <!-- 核心：读取 _posts 里的 about-me.md 文件并渲染（保留原有逻辑） -->
   {% assign about_me = site.posts | where: "name", "2026-02-27-about-me" | first %}
   {% if about_me %}
     <ul class="post-list">
@@ -23,7 +23,7 @@ layout: default
     </ul>
   {% endif %}
   
-  <!-- 原有文章列表逻辑（保留，可显示其他 posts 内容） -->
+  <!-- 原有文章列表逻辑（仅修改摘要→全文，其他不变） -->
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
@@ -51,7 +51,8 @@ layout: default
           {%- endif -%}
         </p>
         {%- if post.show_excerpts != false -%}
-          <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
+          <!-- 仅修改这一行：把 excerpt 改为 content，去掉 strip_html（保留格式） -->
+          <div class="post-excerpt">{{ post.content }}</div>
         {%- endif -%}
       </li>
       {%- endfor -%}

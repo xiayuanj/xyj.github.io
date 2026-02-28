@@ -5,119 +5,105 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 拓宽页面+优化表格样式（适配学术简历） -->
+<!-- 核心保留：拓宽页面+表格基础优化 | 修复：移除丑的卡片/阴影，回归极简学术风 -->
 <style>
-/* ========== 原有功能：拓宽页面+表格样式（完全保留） ========== */
-/* 核心：拓宽页面整体宽度（默认窄幅→1200px宽幅，大气不拥挤） */
+/* ========== 原有核心功能：拓宽页面（完全保留，仅微调留白更舒适） ========== */
 .wrapper {
-  max-width: 1200px !important; /* 页面最大宽度，可按需调整为1000px/1400px */
-  padding-left: 20px !important; /* 左右留白，避免内容贴边 */
-  padding-right: 20px !important;
-  margin: 0 auto !important; /* 页面居中显示 */
+  max-width: 1200px !important; /* 保留宽幅，不拥挤 */
+  padding-left: 30px !important; /* 增加左留白，更透气 */
+  padding-right: 30px !important;
+  margin: 0 auto !important; /* 页面居中 */
 }
 
-/* 优化教育经历表格，适配宽幅页面 */
+/* ========== 原有核心功能：表格尺寸/内边距优化（完全保留） ========== */
 .post-excerpt table, .post-content table {
-  width: 100% !important; /* 表格占满宽幅页面 */
-  margin: 25px 0 !important; /* 表格上下留白，和正文区分更清晰 */
-  border-collapse: collapse !important;
+  width: 100% !important; /* 表格占满宽幅 */
+  margin: 25px 0 !important; /* 上下留白 */
+  border-collapse: collapse !important; /* 合并边框，不杂乱 */
 }
 
-/* 表格内边距优化，内容更舒展 */
 .post-excerpt td, .post-content td {
-  padding: 12px 8px !important; /* 单元格内边距，避免内容拥挤 */
-  font-size: 16px !important; /* 字体大小适配宽幅，阅读更舒适 */
+  padding: 12px 8px !important; /* 单元格内边距 */
+  font-size: 16px !important; /* 字体大小 */
 }
 
 .post-excerpt th, .post-content th {
   text-align: left !important;
-  border-bottom: 2px solid #dc3545 !important; /* 标题下划线加粗，更醒目 */
   padding-bottom: 10px !important;
-  color: #dc3545 !important;
   font-size: 22px !important;
   font-weight: 700 !important;
 }
 
-/* 响应式适配：手机/平板自动适配，无横向滚动条 */
+/* ========== 修复核心：删除所有卡片/阴影，回归极简纯白（关键！） ========== */
+/* 1. 全局背景：还原纯净白色，告别显脏的浅米色 */
+body {
+  background-color: #FFFFFF !important;
+  color: #333333 !important; /* 柔和深灰文字，不生硬 */
+  line-height: 1.7 !important;
+}
+
+/* 2. 导航栏：还原极简，删除阴影/多余边框 */
+.site-header {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #EEEEEE !important; /* 仅保留极细浅灰下边框，不突兀 */
+  box-shadow: none !important; /* 彻底删除阴影 */
+}
+
+/* 3. 侧边栏：还原极简，删除卡片/阴影/边框 */
+.sidebar {
+  background-color: #FFFFFF !important;
+  border-right: none !important; /* 删除侧边栏右边框 */
+  box-shadow: none !important; /* 删除阴影 */
+}
+
+/* 4. 正文区域：还原极简，删除圆角卡片/阴影 */
+.post-content, .content {
+  background-color: #FFFFFF !important;
+  border-radius: 0 !important; /* 删除圆角 */
+  box-shadow: none !important; /* 彻底删除阴影 */
+  padding: 0 !important; /* 删除多余内边距，和页面留白统一 */
+}
+
+/* ========== 配色修复：统一学术风，删除杂乱颜色 ========== */
+/* 1. 标题：统一深灰，删除刺眼红色 */
+h1, h2, h3, h4, h5, h6, .site-title, .section h2,
+.post-excerpt th, .post-content th {
+  color: #222222 !important; /* 标题统一深灰，层次清晰 */
+  border-bottom: 2px solid #EEEEEE !important; /* 标题下划线改为极细浅灰，学术感强 */
+}
+
+/* 2. 链接：统一清爽青蓝色，删除多余样式 */
+a, .post-content a, .content a, .site-nav a:hover, .current-page {
+  color: #0066CC !important; /* 示例同款专业蓝色，不花哨 */
+  text-decoration: underline !important;
+}
+
+a:hover {
+  color: #004C99 !important; /* hover轻微加深，不突兀 */
+}
+
+/* 3. 侧边栏文字：统一浅灰，不抢焦点 */
+.sidebar p, .sidebar .contact-links p {
+  color: #666666 !important;
+}
+
+/* ========== 响应式适配：保留原有逻辑，仅适配新样式 ========== */
 @media screen and (max-width: 768px) {
   .wrapper {
-    max-width: 100% !important; /* 移动端占满屏幕 */
+    max-width: 100% !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
 
-  /* 移动端表格字体缩小，避免换行混乱 */
   .post-excerpt td, .post-content td {
     font-size: 14px !important;
     padding: 8px 4px !important;
   }
-}
 
-/* ========== 新增：适配设计图的B端配色（核心修改） ========== */
-/* 1. 全局背景+文字配色（浅米色背景+深灰文字，替代默认纯白/纯黑） */
-body {
-  background-color: #F5F3EF !important; /* 设计图同款浅米色背景 */
-  color: #333333 !important; /* 柔和深灰文字，告别生硬纯黑 */
-  line-height: 1.7 !important; /* 行高更舒展，适配宽幅页面 */
-}
-
-/* 2. 导航栏配色（白色卡片+浅灰边框，贴合设计图质感） */
-.site-header {
-  background-color: #FFFFFF !important;
-  border-bottom: 1px solid #E6E3DC !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
-}
-.site-nav a, .dropbtn {
-  color: #333333 !important;
-}
-.site-nav a:hover, .current-page {
-  color: #66d9ef !important; /* 保留青蓝色强调，适配学术风格 */
-}
-
-/* 3. 侧边栏配色（白色卡片+浅灰边框，和设计图一致） */
-.sidebar {
-  background-color: #FFFFFF !important;
-  border-right: 1px solid #E6E3DC !important;
-  box-shadow: 1px 0 3px rgba(0,0,0,0.05) !important;
-  color: #555555 !important; /* 侧边栏文字稍浅，不抢正文焦点 */
-}
-
-/* 4. 正文区域配色（白色卡片+圆角+轻微阴影，贴合设计图卡片感） */
-.post-content, .content {
-  background-color: #FFFFFF !important;
-  border-radius: 8px !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
-}
-
-/* 5. 标题配色（层次更清晰，贴合设计图） */
-h1, h2, h3, h4, h5, h6, .site-title, .section h2 {
-  color: #121212 !important; /* 标题稍深，突出层次 */
-  font-weight: 600 !important;
-}
-
-/* 6. 链接配色（青蓝色，保持学术风格统一） */
-a, .post-content a, .content a {
-  color: #66d9ef !important;
-  text-decoration: underline !important;
-}
-a:hover {
-  color: #4bc0e4 !important; /* hover加深，交互更明显 */
-}
-
-/* 7. 表格配色适配（贴合整体B端风格，保留原有表格宽度逻辑） */
-.post-content table {
-  background-color: #FFFFFF !important;
-  border: 1px solid #E6E3DC !important;
-  border-radius: 8px !important;
-  overflow: hidden !important;
-}
-.post-content th {
-  background-color: #F5F3EF !important; /* 表格标题背景和页面背景一致 */
-  border-bottom: 2px solid #E6E3DC !important; /* 替换原红色下划线，适配B端风格 */
-  color: #121212 !important; /* 表格标题文字加深，更醒目 */
-}
-.post-content td {
-  border-bottom: 1px solid #F5F3EF !important;
-  color: #333333 !important;
+  /* 移动端侧边栏：仅加下边框，无其他样式 */
+  .sidebar {
+    border-bottom: 1px solid #EEEEEE !important;
+    margin-bottom: 20px !important;
+  }
 }
 </style>

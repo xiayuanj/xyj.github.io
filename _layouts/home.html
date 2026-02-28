@@ -5,67 +5,86 @@ layout: default
 <div class="home">
   {{ content }}
 
-  <!-- 新增：最高优先级样式 - 强制缩小期刊论文等二级标题 + 间距 + 链接样式 + 科研风字体 -->
+  <!-- 核心样式：保留所有内容 + 去掉横线 + 优化字体/间距 -->
   <style>
-    /* ========== 核心：英文采用zero-shot同款无衬线字体（科研技术风） ========== */
-    /* 全局文本（英文+中文）字体适配，优先西文无衬线，中文改为思源黑体 */
-    .post-list .post-excerpt,
-    .post-list .post-excerpt * {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Source Han Sans CN", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
-      /* 中文优先使用思源黑体，兼容所有系统 */
+    /* ========== 1. 彻底移除所有多余横线/边框（只删不要的，不影响内容） ========== */
+    /* 移除列表项默认的分隔线 */
+    .post-list li {
+      border: none !important;
+      border-bottom: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
     }
-    /* 英文标题/链接强化：更贴合技术文档风格 */
-    .post-list .post-excerpt a,
-    .post-list .post-excerpt h2,
-    .post-list .post-excerpt h3 {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-      font-weight: 500 !important; /* 中等字重，和zero-shot风格一致 */
+    /* 移除页面中所有自动生成的水平线 */
+    hr {
+      display: none !important;
+    }
+    /* 移除post-list容器的默认样式 */
+    .post-list {
+      list-style: none !important;
+      padding: 0 15px !important; /* 保留少量内边距，避免内容贴边 */
+      margin: 0 !important;
+      border: none !important;
     }
 
-    /* ========== 原有样式：标题字号控制 ========== */
-    .post-list .post-excerpt h2 {
-      font-size: 18px !important;    /* 核心：缩小期刊论文标题 */
-      font-weight: 600 !important;   /* 取消过粗，更协调 */
-      color: #333333 !important;    /* 改为深灰，弱化视觉占比 */
-      margin: 20px 0 10px 0 !important; /* 缩小上下间距 */
+    /* ========== 2. 字体设置（英文科研风 + 中文思源黑体） ========== */
+    /* 全局文本字体适配 */
+    .post-excerpt, .post-excerpt * {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Source Han Sans CN", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif !important;
+    }
+    /* 英文标题/链接强化 */
+    .post-excerpt a, .post-excerpt h2, .post-excerpt h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif !important;
+      font-weight: 500 !important;
+    }
+
+    /* ========== 3. 标题/内容样式优化（保留内容，调整排版） ========== */
+    /* 二级标题（如科研成果）样式 */
+    .post-excerpt h2 {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      color: #333 !important;
+      margin: 25px 0 10px 0 !important;
       line-height: 1.2 !important;
     }
-    /* 兜底：确保正文和其他标题层级清晰 */
-    .post-list .post-excerpt p,
-    .post-list .post-excerpt li {
-      font-size: 16px !important;
-    }
-    .post-list .post-excerpt h3 {
+    /* 三级标题样式 */
+    .post-excerpt h3 {
       font-size: 17px !important;
+      margin: 20px 0 8px 0 !important;
     }
-
-    /* ========== 新增1：论文条目间距（参考图核心效果） ========== */
-    .post-list .post-excerpt p {
-      margin: 0 0 15px 0 !important; /* 每条论文底部留15px间距，实现均匀分隔 */
-      padding: 0 !important;
-      line-height: 1.7 !important;   /* 行高适配，阅读更舒适 */
-      text-align: justify !important;/* 正文两端对齐，更规整 */
-    }
-    /* 专利/项目列表条目也补充间距，保持统一 */
-    .post-list .post-excerpt li {
-      margin: 0 0 15px 0 !important;
+    /* 正文/列表样式 */
+    .post-excerpt p, .post-excerpt li {
+      font-size: 16px !important;
       line-height: 1.7 !important;
+      margin: 0 0 12px 0 !important;
+      padding: 0 !important;
+      text-align: justify !important;
     }
 
-    /* ========== 新增2：可跳转链接样式（参考图蓝色可点击效果） ========== */
-    .post-list .post-excerpt a {
-      color: #0066CC !important;    /* 学术蓝，和参考图一致 */
-      text-decoration: none !important; /* 默认无下划线，更清爽 */
-      font-weight: 500 !important;   /* 轻微加粗，突出可点击 */
+    /* ========== 4. 链接样式（保留可点击效果） ========== */
+    .post-excerpt a {
+      color: #0066CC !important;
+      text-decoration: none !important;
     }
-    /* 鼠标悬浮时显示下划线，提示可点击 */
-    .post-list .post-excerpt a:hover {
+    .post-excerpt a:hover {
       text-decoration: underline !important;
-      color: #004499 !important;    /* 悬浮时加深蓝色，交互更明显 */
+      color: #004499 !important;
+    }
+
+    /* ========== 5. 保留必要的标题/日期（不隐藏任何内容） ========== */
+    .post-link {
+      color: #333 !important;
+      text-decoration: none !important;
+    }
+    .post-meta {
+      font-size: 14px !important;
+      color: #666 !important;
+      margin: 0 0 15px 0 !important;
     }
   </style>
   
-  <!-- 核心：读取 _posts 里的 about-me.md 文件并渲染（保留原有逻辑） -->
+  <!-- 核心：读取 about-me.md 并显示（内容完整保留） -->
   {% assign about_me = site.posts | where: "name", "2026-02-27-about-me" | first %}
   {% if about_me %}
     <ul class="post-list">
@@ -83,7 +102,7 @@ layout: default
     </ul>
   {% endif %}
   
-  <!-- 原有文章列表逻辑（仅修改摘要→全文，其他不变） -->
+  <!-- 保留其他文章列表（内容完整显示，仅去掉横线） -->
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
@@ -96,7 +115,7 @@ layout: default
       {%- for post in posts -%}
       <li>
         <h2>
-          <a href="{{ post.url | relative_url }}">
+          <a href="{{ post.url | relative_url }}" class="post-link">
             {{ post.title | escape }}
           </a>
         </h2>
@@ -111,13 +130,13 @@ layout: default
           {%- endif -%}
         </p>
         {%- if post.show_excerpts != false -%}
-          <!-- 仅修改这一行：把 excerpt 改为 content，去掉 strip_html（保留格式） -->
           <div class="post-excerpt">{{ post.content }}</div>
         {%- endif -%}
       </li>
       {%- endfor -%}
     </ul>
 
+    <!-- 分页样式（保留，仅去掉多余边框） -->
     {% if site.paginate %}
       <div class="pager">
         <ul class="pagination">
@@ -135,7 +154,6 @@ layout: default
         </ul>
       </div>
     {%- endif %}
-
   {%- endif -%}
   
   {%- if jekyll.environment == "production" and site.disqus -%}

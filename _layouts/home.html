@@ -8,11 +8,11 @@ layout: default
   <!-- 新增：最高优先级样式 - 强制缩小期刊论文等二级标题 + 间距 + 链接样式 + 科研风字体 -->
   <style>
     /* ========== 核心：英文采用zero-shot同款无衬线字体（科研技术风） ========== */
-    /* 全局文本（英文+中文）字体适配，优先西文无衬线，中文适配微软雅黑/苹方 */
+    /* 全局文本（英文+中文）字体适配，优先西文无衬线，中文改为思源黑体 */
     .post-list .post-excerpt,
     .post-list .post-excerpt * {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
-      /* 通用兼容方案：覆盖所有系统/浏览器，无需额外字体文件 */
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Source Han Sans CN", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+      /* 中文优先使用思源黑体，兼容所有系统 */
     }
     /* 英文标题/链接强化：更贴合技术文档风格 */
     .post-list .post-excerpt a,

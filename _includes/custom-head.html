@@ -5,7 +5,7 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 核心：全屏宽度 + 侧边栏左移 + 纯白背景 + 表格优化 -->
+<!-- 全局统一：全屏布局 + 侧边栏左移 + 纯白背景 + 表格/排版优化 -->
 <style>
 /* ========== 1. 全局基础：全页面统一纯白背景 + 全屏宽度 ========== */
 body,
@@ -15,24 +15,24 @@ html {
   line-height: 1.7 !important;
   margin: 0 !important;
   padding: 0 !important;
-  width: 100vw !important; /* 页面宽度占满屏幕 */
-  overflow-x: hidden !important; /* 避免横向滚动 */
+  width: 100vw !important;
+  overflow-x: hidden !important;
 }
 
-/* ========== 2. 核心布局：全屏宽度 + 侧边栏左移 ========== */
+/* ========== 2. 核心布局：全屏宽度 + 侧边栏左移（所有页面同步） ========== */
 /* 外层容器：取消最大宽度限制，占满屏幕 */
 .wrapper {
-  max-width: 100% !important; /* 彻底取消宽度限制，全屏显示 */
+  max-width: 100% !important;
   width: 100% !important;
-  padding-left: 20px !important; /* 左侧留白，可自行调整 */
+  padding-left: 20px !important;
   padding-right: 20px !important;
   margin: 0 auto !important;
 }
 
-/* 侧边栏：向左移动，贴近屏幕左侧 */
+/* 侧边栏：向左移动，贴近屏幕左侧（所有页面生效） */
 .sidebar {
   position: relative !important;
-  left: 0 !important; /* 强制靠左 */
+  left: 0 !important;
   margin-left: -10px !important; /* 向左微调，可根据需要调整数值 */
   width: 280px !important; /* 侧边栏宽度，可自定义 */
   padding-left: 10px !important;
@@ -41,10 +41,11 @@ html {
   box-shadow: none !important;
 }
 
-/* 正文区域：占满剩余宽度，无限制 */
+/* 正文区域：占满剩余宽度，无限制（所有页面生效） */
 .main-content,
 .post-content, 
-.content {
+.content,
+.home .content {
   width: calc(100% - 300px) !important; /* 减去侧边栏宽度，自适应 */
   margin-left: 300px !important; /* 对应侧边栏宽度，避免重叠 */
   padding: 0 20px !important;
@@ -122,7 +123,37 @@ a:hover {
   color: #004C99 !important;
 }
 
-/* ========== 8. 响应式适配：移动端自动适配 ========== */
+/* ========== 8. 全局排版优化：英文单词间距 + 无横线 ========== */
+/* 彻底移除所有横线/下划线（包括一级标题） */
+hr {
+  display: none !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+h1 a, h2 a, h3 a {
+  text-decoration: none !important;
+}
+
+/* 正文/列表样式 - 解决英文单词间隔问题（全局生效） */
+p, li,
+.post-excerpt p, .post-excerpt li,
+.post-content p, .post-content li {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  margin: 0 0 12px 0 !important;
+  padding: 0 !important;
+  text-align: left !important; /* 左对齐，避免英文单词拉伸 */
+  hyphens: auto !important; /* 英文连字符换行 */
+  -webkit-hyphens: auto !important;
+  -ms-hyphens: auto !important;
+  word-wrap: break-word !important; /* 长单词自动换行 */
+  overflow-wrap: break-word !important;
+}
+
+/* ========== 9. 响应式适配：移动端自动适配 ========== */
 @media screen and (max-width: 768px) {
   .wrapper {
     max-width: 100% !important;
@@ -139,7 +170,8 @@ a:hover {
   }
   .main-content,
   .post-content, 
-  .content {
+  .content,
+  .home .content {
     width: 100% !important;
     margin-left: 0 !important;
     padding: 0 10px !important;
@@ -150,7 +182,7 @@ a:hover {
   }
 }
 
-/* ========== 9. 额外修复：标签云/按钮等杂色背景 ========== */
+/* ========== 10. 额外修复：标签云/按钮等杂色背景 ========== */
 .tag-cloud a, .btn, button {
   background-color: #FFFFFF !important;
   border: 1px solid #EEEEEE !important;

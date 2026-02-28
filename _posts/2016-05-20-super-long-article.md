@@ -38,9 +38,11 @@ author:
 
 [14] Zhao Zhiqiang, Hu Xuexian, Liu Yining, Wei Jianghong, Xia Yuanjun, Liang Yangfan. [SECP-AKE: Secure and efficient certificateless-password-based authenticated key exchange protocol for smart healthcare systems](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J]. IEEE Transactions on Services Computing, 17(6):3400-3416, 2024. （中科院三区，CCF B）
 
+
 ## 会议论文
 
 [1] Xia Yuanjun, Dong Shi*, Peng Tao, Wang Tao. [Wireless Network Abnormal Traffic Detection Method Based on Deep Transfer Reinforcement Learning](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[C]. 2021 17th International Conference on Mobility, Sensing and Networking (MSN), 528-535, 2021. (CCF C)
+
 
 ## 专利成果
 
@@ -55,6 +57,7 @@ author:
 · 董仕，夏元俊. [一种网络入侵检测方法、装置及设备](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202110450303.3[P].2021-07-27.（公开）
 
 · 夏钦宇，董仕，夏元俊，彭涛. [一种基于会话时空特征相残差的物联网设备识别模型](https://cpquery.cnipa.gov.cn/xxxxxx){:target="_blank"}：CN202210695834.3[P].2022-11-11.（公开）
+
 
 ## 科研项目
 

@@ -5,7 +5,7 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 调整为参考图布局：左侧固定栏 + 顶部导航 + 右侧内容区 -->
+<!-- 调整为参考图布局：左侧固定栏 + 顶部导航 + 右侧内容区 + 增加左右留白 -->
 <style>
 /* ========== 1. 全局基础：全页面统一纯白背景 + 布局重置 ========== */
 body,
@@ -18,57 +18,58 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
 }
 
-/* ========== 2. 整体布局结构（核心修改） ========== */
+/* ========== 2. 整体布局结构（核心修改：增加左右留白） ========== */
 .site-container {
   width: 100% !important;
   display: flex !important;
   flex-direction: column !important;
 }
 
-/* 顶部导航栏：置顶 + 右对齐 + 纯白风格 */
+/* 顶部导航栏：置顶 + 右对齐 + 纯白风格 + 适配留白 */
 .site-header {
   background-color: #FFFFFF !important;
   border-bottom: 1px solid #EEEEEE !important;
   box-shadow: none !important;
-  padding: 15px 30px !important;
+  padding: 15px 70px !important; /* 左右留白增加到70px（约2cm） */
   position: sticky !important;
   top: 0 !important;
   z-index: 100 !important;
-  width: calc(100% - 60px) !important;
+  width: calc(100% - 140px) !important; /* 宽度减去左右留白（70px*2） */
 }
 
-/* 主体区域：双栏布局（左侧固定 + 右侧内容） */
+/* 主体区域：双栏布局（左侧固定 + 右侧内容） + 增加左右留白 */
 .site-body.wrapper {
   max-width: 100% !important;
   width: 100% !important;
-  padding: 20px 30px !important;
+  padding: 30px 70px !important; /* 左右留白增加到70px（约2cm），上下留白30px */
   margin: 0 !important;
   display: flex !important;
-  gap: 40px !important; /* 侧边栏和内容区间距 */
+  gap: 50px !important; /* 侧边栏和内容区间距略微增加，更协调 */
+  box-sizing: border-box !important; /* 确保padding不撑破宽度 */
 }
 
 /* 左侧侧边栏：固定宽度 + 粘性定位（滚动时固定） + 美化 */
 .site-sidebar#site-sidebar {
-  width: 280px !important; /* 参考图侧边栏宽度 */
-  flex: 0 0 280px !important; /* 固定宽度不缩放 */
+  width: 260px !important; /* 略微缩小侧边栏，给留白腾空间 */
+  flex: 0 0 260px !important; /* 固定宽度不缩放 */
   position: sticky !important;
   top: 80px !important; /* 距离顶部导航栏的距离 */
   height: fit-content !important;
   background-color: #FFFFFF !important;
   border-right: none !important;
   box-shadow: none !important;
-  padding: 20px 15px !important;
+  padding: 20px 10px !important;
   margin: 0 !important;
 }
 
-/* 右侧内容区：自适应宽度 + 纯白背景 */
+/* 右侧内容区：自适应宽度 + 纯白背景 + 适配留白 */
 .site-main#site-main {
   flex: 1 !important; /* 占满剩余宽度 */
   background-color: #FFFFFF !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   padding: 10px 20px !important;
-  max-width: calc(100% - 350px) !important;
+  max-width: none !important; /* 取消最大宽度限制，自适应留白 */
 }
 
 /* ========== 3. 侧边栏内容美化（参考学术主页风格） ========== */
@@ -189,7 +190,7 @@ hr {
 @media screen and (max-width: 768px) {
   .site-body.wrapper {
     flex-direction: column !important;
-    padding: 10px 15px !important;
+    padding: 20px 15px !important; /* 移动端留白减小 */
     gap: 20px !important;
   }
   .site-sidebar#site-sidebar {
@@ -205,7 +206,7 @@ hr {
     padding: 0 10px !important;
   }
   .site-header {
-    padding: 10px 15px !important;
+    padding: 10px 15px !important; /* 移动端留白减小 */
     width: calc(100% - 30px) !important;
   }
   .post-excerpt td, .post-content td {

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "荣誉与奖项"
 categories: misc
 ---

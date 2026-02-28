@@ -5,7 +5,7 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 全局统一：全屏布局 + 侧边栏左移 + 纯白背景 + 表格/排版优化 -->
+<!-- 全局统一：全屏布局 + 侧边栏左移 + 导航栏置顶 + 纯白背景 + 表格/排版优化 -->
 <style>
 /* ========== 1. 全局基础：全页面统一纯白背景 + 全屏宽度 ========== */
 body,
@@ -24,21 +24,23 @@ html {
 .wrapper {
   max-width: 100% !important;
   width: 100% !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   margin: 0 auto !important;
 }
 
 /* 侧边栏：向左移动，贴近屏幕左侧（所有页面生效） */
 .sidebar {
-  position: relative !important;
+  position: fixed !important; /* 改为固定定位，始终在左侧 */
+  top: 0 !important;
   left: 0 !important;
-  margin-left: -10px !important; /* 向左微调，可根据需要调整数值 */
-  width: 280px !important; /* 侧边栏宽度，可自定义 */
-  padding-left: 10px !important;
+  width: 180px !important; /* 缩小侧边栏宽度，更紧凑 */
+  height: 100vh !important;
+  padding: 20px 15px !important;
   background-color: #FFFFFF !important;
-  border-right: none !important;
+  border-right: 1px solid #EEEEEE !important;
   box-shadow: none !important;
+  overflow-y: auto !important;
 }
 
 /* 正文区域：占满剩余宽度，无限制（所有页面生效） */
@@ -46,28 +48,39 @@ html {
 .post-content, 
 .content,
 .home .content {
-  width: calc(100% - 300px) !important; /* 减去侧边栏宽度，自适应 */
-  margin-left: 300px !important; /* 对应侧边栏宽度，避免重叠 */
-  padding: 0 20px !important;
+  width: calc(100% - 200px) !important; /* 减去侧边栏宽度，自适应 */
+  margin-left: 200px !important; /* 对应侧边栏宽度，避免重叠 */
+  padding: 20px 30px !important;
   background-color: #FFFFFF !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 
-/* ========== 3. 导航栏：彻底改为纯白，无阴影/杂色 ========== */
-.site-header,
-.site-nav,
-.dropdown-content {
+/* ========== 3. 导航栏：修复位置，置顶右上角 ========== */
+.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: calc(100% - 200px) !important; /* 减去侧边栏宽度 */
   background-color: #FFFFFF !important;
-  border-bottom: 1px solid #EEEEEE !important; /* 仅保留极细分隔线 */
-  box-shadow: none !important; /* 彻底删除阴影 */
-  width: 100% !important; /* 导航栏全屏 */
+  border-bottom: 1px solid #EEEEEE !important;
+  box-shadow: none !important;
+  z-index: 100 !important; /* 确保在最上层 */
+}
+.site-nav {
+  text-align: right !important; /* 导航栏右对齐 */
+  padding: 10px 30px !important;
 }
 .site-nav a, .dropbtn {
   color: #333333 !important;
+  margin-left: 20px !important;
 }
 .site-nav a:hover, .current-page {
   color: #0066CC !important;
+}
+.dropdown-content {
+  right: 0 !important;
+  left: auto !important;
 }
 
 /* ========== 4. 侧边栏细节：纯白背景，目录样式优化 ========== */
@@ -80,6 +93,25 @@ html {
 }
 .sidebar .table-of-contents li {
   border-bottom: 1px solid #EEEEEE !important; /* 仅保留目录分隔线 */
+}
+.sidebar .author-avatar {
+  text-align: center !important;
+  margin-bottom: 20px !important;
+}
+.sidebar .author-avatar img {
+  border-radius: 50% !important;
+  width: 120px !important;
+  height: 120px !important;
+}
+.sidebar .author-name {
+  text-align: center !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin-bottom: 10px !important;
+}
+.sidebar .author-contact {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
 }
 
 /* ========== 5. 表格：彻底纯白，仅保留浅灰分隔线 ========== */
@@ -157,16 +189,12 @@ p, li,
 @media screen and (max-width: 768px) {
   .wrapper {
     max-width: 100% !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   /* 移动端隐藏侧边栏/自适应 */
   .sidebar {
-    width: 100% !important;
-    left: 0 !important;
-    margin-left: 0 !important;
-    border-bottom: 1px solid #EEEEEE !important;
-    margin-bottom: 20px !important;
+    display: none !important; /* 移动端隐藏侧边栏 */
   }
   .main-content,
   .post-content, 
@@ -174,7 +202,17 @@ p, li,
   .home .content {
     width: 100% !important;
     margin-left: 0 !important;
-    padding: 0 10px !important;
+    padding: 20px 15px !important;
+  }
+  .site-header {
+    width: 100% !important;
+  }
+  .site-nav {
+    text-align: center !important;
+    padding: 10px !important;
+  }
+  .site-nav a {
+    margin: 0 10px !important;
   }
   .post-excerpt td, .post-content td {
     font-size: 14px !important;

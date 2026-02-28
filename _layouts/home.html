@@ -5,7 +5,7 @@ layout: default
 <div class="home">
   {{ content }}
 
-  <!-- 核心样式：保留所有内容 + 去掉横线 + 优化字体/间距 -->
+  <!-- 核心样式：保留所有内容 + 去掉横线 + 优化字体/间距 + 修复英文排版 -->
   <style>
     /* ========== 1. 彻底移除所有多余横线/边框（只删不要的，不影响内容） ========== */
     /* 移除列表项默认的分隔线 */
@@ -39,7 +39,7 @@ layout: default
       font-weight: 500 !important;
     }
 
-    /* ========== 3. 标题/内容样式优化（保留内容，调整排版） ========== */
+    /* ========== 3. 标题/内容样式优化（核心修复英文排版问题） ========== */
     /* 二级标题（如科研成果）样式 */
     .post-excerpt h2 {
       font-size: 18px !important;
@@ -53,13 +53,18 @@ layout: default
       font-size: 17px !important;
       margin: 20px 0 8px 0 !important;
     }
-    /* 正文/列表样式 */
+    /* 正文/列表样式 - 核心修改：彻底解决英文单词间隔问题 */
     .post-excerpt p, .post-excerpt li {
       font-size: 16px !important;
       line-height: 1.7 !important;
       margin: 0 0 12px 0 !important;
       padding: 0 !important;
-      text-align: justify !important;
+      text-align: left !important; /* 改为左对齐，彻底解决英文单词被强制拉伸的问题 */
+      hyphens: auto !important; /* 启用连字符，优化英文换行 */
+      -webkit-hyphens: auto !important;
+      -ms-hyphens: auto !important;
+      word-wrap: break-word !important; /* 长单词自动换行 */
+      overflow-wrap: break-word !important;
     }
 
     /* ========== 4. 链接样式（保留可点击效果） ========== */
@@ -115,7 +120,7 @@ layout: default
       {%- for post in posts -%}
       <li>
         <h2>
-          <a href="{{ post.url | relative_url }}" class="post-link">
+          <a href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
         </h2>

@@ -71,6 +71,8 @@ author:
 
 ➢ 河南省教育厅，河南省教育厅科学技术研究重点项目，多视角特征降维技术在图像分类中的应用研究，22A520052，[多视角特征降维技术在图像分类中的应用研究](https://xxx.haedu.gov.cn/xxxxxx){:target="_blank"}，2022-01至 2023-12，3万元，结项，参与（6/6）
 
+
+
 <style>
 /* 合并样式：兼容home.html的样式，同时优化间距 */
 .post-content h2 {
@@ -98,3 +100,4 @@ author:
   color: #004499 !important;
 }
 </style>
+

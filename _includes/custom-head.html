@@ -5,7 +5,7 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 全局统一：所有页面（主页+详情页）布局/留白/样式完全同步 -->
+<!-- 调整为参考图布局：左侧固定栏 + 顶部导航 + 右侧内容区 + 增加左右留白 -->
 <style>
 /* ========== 1. 全局基础：全页面统一纯白背景 + 布局重置 ========== */
 body,
@@ -15,45 +15,45 @@ html {
   line-height: 1.7 !important;
   margin: 0 !important;
   padding: 0 !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Source Han Sans CN", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
 }
 
-/* ========== 2. 整体布局结构（全页面生效：主页+详情页） ========== */
+/* ========== 2. 整体布局结构（核心修改：增加左右留白） ========== */
 .site-container {
   width: 100% !important;
   display: flex !important;
   flex-direction: column !important;
 }
 
-/* 顶部导航栏：全页面统一 + 适配留白 */
+/* 顶部导航栏：置顶 + 右对齐 + 纯白风格 + 适配留白 */
 .site-header {
   background-color: #FFFFFF !important;
   border-bottom: 1px solid #EEEEEE !important;
   box-shadow: none !important;
-  padding: 15px 70px !important; /* 左右留白70px（约2cm） */
+  padding: 15px 70px !important; /* 左右留白增加到70px（约2cm） */
   position: sticky !important;
   top: 0 !important;
   z-index: 100 !important;
-  width: calc(100% - 140px) !important; /* 宽度减去左右留白 */
+  width: calc(100% - 140px) !important; /* 宽度减去左右留白（70px*2） */
 }
 
-/* 主体区域：双栏布局 全页面统一（主页+详情页） */
+/* 主体区域：双栏布局（左侧固定 + 右侧内容） + 增加左右留白 */
 .site-body.wrapper {
   max-width: 100% !important;
   width: 100% !important;
-  padding: 30px 70px !important; /* 左右留白70px（约2cm） */
+  padding: 30px 70px !important; /* 左右留白增加到70px（约2cm），上下留白30px */
   margin: 0 !important;
   display: flex !important;
-  gap: 50px !important; /* 侧边栏和内容区间距 */
-  box-sizing: border-box !important;
+  gap: 50px !important; /* 侧边栏和内容区间距略微增加，更协调 */
+  box-sizing: border-box !important; /* 确保padding不撑破宽度 */
 }
 
-/* 左侧侧边栏：全页面统一（主页+详情页目录） */
+/* 左侧侧边栏：固定宽度 + 粘性定位（滚动时固定） + 美化 */
 .site-sidebar#site-sidebar {
-  width: 260px !important;
-  flex: 0 0 260px !important;
+  width: 260px !important; /* 略微缩小侧边栏，给留白腾空间 */
+  flex: 0 0 260px !important; /* 固定宽度不缩放 */
   position: sticky !important;
-  top: 80px !important;
+  top: 80px !important; /* 距离顶部导航栏的距离 */
   height: fit-content !important;
   background-color: #FFFFFF !important;
   border-right: none !important;
@@ -62,123 +62,28 @@ html {
   margin: 0 !important;
 }
 
-/* 右侧内容区：全页面统一（主页+详情页） */
+/* 右侧内容区：自适应宽度 + 纯白背景 + 适配留白 */
 .site-main#site-main {
-  flex: 1 !important;
+  flex: 1 !important; /* 占满剩余宽度 */
   background-color: #FFFFFF !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   padding: 10px 20px !important;
-  max-width: none !important;
-  box-sizing: border-box !important;
+  max-width: none !important; /* 取消最大宽度限制，自适应留白 */
 }
 
-/* ========== 3. 全页面内容样式统一（核心：覆盖主页+详情页） ========== */
-/* 同时覆盖：主页内容、文章详情页、单页面的内容容器 */
-.post-excerpt,
-.post-content,
-.page-content,
-.post-excerpt *,
-.post-content *,
-.page-content * {
-  font-family: inherit !important;
-  line-height: 1.7 !important;
-  text-align: left !important; /* 解决英文单词间距问题 */
-  hyphens: auto !important;
-  -webkit-hyphens: auto !important;
-  -ms-hyphens: auto !important;
-  word-wrap: break-word !important;
-  overflow-wrap: break-word !important;
-}
-
-/* 正文/列表样式 全页面统一 */
-.post-excerpt p, .post-excerpt li,
-.post-content p, .post-content li,
-.page-content p, .page-content li {
-  font-size: 16px !important;
-  margin: 0 0 12px 0 !important;
-  padding: 0 !important;
-}
-
-/* 标题样式 全页面统一 */
-.post-excerpt h1, .post-excerpt h2, .post-excerpt h3,
-.post-content h1, .post-content h2, .post-content h3,
-.page-content h1, .page-content h2, .page-content h3,
-.post-title, .page-title {
-  color: #092B42 !important;
-  border-bottom: none !important;
-  text-decoration: none !important;
-  box-shadow: none !important;
-  font-weight: 600 !important;
-}
-/* 标题字号层级统一 */
-.post-excerpt h1, .post-content h1, .page-content h1, .post-title {
-  font-size: 24px !important;
-  margin: 0 0 15px 0 !important;
-}
-.post-excerpt h2, .post-content h2, .page-content h2 {
-  font-size: 20px !important;
-  margin: 25px 0 10px 0 !important;
-}
-.post-excerpt h3, .post-content h3, .page-content h3 {
-  font-size: 18px !important;
-  margin: 20px 0 8px 0 !important;
-}
-
-/* 链接样式 全页面统一 */
-.post-excerpt a, .post-content a, .page-content a,
-.content a {
-  color: #0066CC !important;
-  text-decoration: underline !important;
-}
-.post-excerpt a:hover, .post-content a:hover, .page-content a:hover {
-  color: #004C99 !important;
-}
-
-/* 表格样式 全页面统一 */
-table,
-table tr,
-table tr:nth-child(odd),
-table tr:nth-child(even),
-table th,
-table td,
-.post-excerpt table,
-.post-content table,
-.page-content table {
-  background-color: #FFFFFF !important;
-  color: #333333 !important;
-  border-collapse: collapse !important;
-  width: 100% !important;
-}
-table th, table td {
-  border: 1px solid #EEEEEE !important;
-  padding: 12px 8px !important;
-}
-.post-excerpt th, .post-content th, .page-content th {
-  color: #092B42 !important;
-  border-bottom: 2px solid #EEEEEE !important;
-  font-size: 22px !important;
-  font-weight: 700 !important;
-}
-
-/* 移除多余横线/下划线 全页面统一 */
-hr {
-  display: none !important;
-}
-.post-list li {
-  border: none !important;
-  border-bottom: none !important;
-}
-
-/* ========== 4. 侧边栏内容美化 ========== */
+/* ========== 3. 侧边栏内容美化（参考学术主页风格） ========== */
+/* 头像样式（如果有） */
 .site-sidebar .author-avatar img {
   width: 160px !important;
   height: 160px !important;
-  border-radius: 50% !important;
+  border-radius: 50% !important; /* 圆形头像 */
   display: block !important;
   margin: 0 auto 20px auto !important;
   object-fit: cover !important;
 }
+
+/* 姓名/标题 */
 .site-sidebar .author-name {
   font-size: 22px !important;
   font-weight: 700 !important;
@@ -186,6 +91,8 @@ hr {
   text-align: center !important;
   margin-bottom: 10px !important;
 }
+
+/* 研究方向/简介 */
 .site-sidebar .author-bio {
   font-size: 15px !important;
   color: #666 !important;
@@ -193,6 +100,8 @@ hr {
   margin-bottom: 20px !important;
   line-height: 1.6 !important;
 }
+
+/* 联系方式 */
 .site-sidebar .author-contact {
   font-size: 14px !important;
   line-height: 1.8 !important;
@@ -205,6 +114,8 @@ hr {
 .site-sidebar .author-contact a:hover {
   text-decoration: underline !important;
 }
+
+/* 侧边栏目录样式（保留原有目录功能） */
 .site-sidebar .table-of-contents {
   list-style: none !important;
   padding-left: 10px !important;
@@ -222,22 +133,64 @@ hr {
   color: #0066CC !important;
 }
 
-/* ========== 5. 文章元信息（日期/分类）样式统一 ========== */
-.post-meta {
-  font-size: 14px !important;
-  color: #666 !important;
-  margin: 0 0 20px 0 !important;
+/* ========== 4. 保留原有功能样式（表格/标题/链接） ========== */
+/* 表格样式：纯白 + 浅灰边框 */
+table,
+table tr,
+table tr:nth-child(odd),
+table tr:nth-child(even),
+table th,
+table td,
+.post-excerpt table, 
+.post-content table {
+  background-color: #FFFFFF !important;
+  color: #333333 !important;
+  border-collapse: collapse !important;
+  width: 100% !important;
 }
-.post-link {
-  color: #333 !important;
+table th, table td {
+  border: 1px solid #EEEEEE !important;
+  padding: 12px 8px !important;
+}
+.post-excerpt th, .post-content th {
+  color: #092B42 !important;
+  border-bottom: 2px solid #EEEEEE !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+}
+
+/* 标题样式：统一颜色 */
+h1, h2, h3, h4, h5, h6,
+.post-title, .page-title, .section h2,
+h2 a, h3 a, .post-list .post-title a {
+  color: #092B42 !important;
+  border-bottom: none !important;
   text-decoration: none !important;
 }
 
-/* ========== 6. 响应式适配（移动端全页面统一） ========== */
+/* 链接样式：统一蓝色 */
+a, .post-content a, .content a {
+  color: #0066CC !important;
+  text-decoration: underline !important;
+}
+a:hover {
+  color: #004C99 !important;
+}
+
+/* 移除多余横线/下划线 */
+hr {
+  display: none !important;
+}
+.post-list li {
+  border: none !important;
+  border-bottom: none !important;
+}
+
+/* ========== 5. 响应式适配（移动端自动堆叠） ========== */
 @media screen and (max-width: 768px) {
   .site-body.wrapper {
     flex-direction: column !important;
-    padding: 20px 15px !important;
+    padding: 20px 15px !important; /* 移动端留白减小 */
     gap: 20px !important;
   }
   .site-sidebar#site-sidebar {
@@ -253,16 +206,16 @@ hr {
     padding: 0 10px !important;
   }
   .site-header {
-    padding: 10px 15px !important;
+    padding: 10px 15px !important; /* 移动端留白减小 */
     width: calc(100% - 30px) !important;
   }
-  .post-excerpt td, .post-content td, .page-content td {
+  .post-excerpt td, .post-content td {
     font-size: 14px !important;
     padding: 8px 4px !important;
   }
 }
 
-/* ========== 7. 额外修复：标签云/按钮等杂色背景 ========== */
+/* ========== 6. 额外修复：标签云/按钮等杂色背景 ========== */
 .tag-cloud a, .btn, button {
   background-color: #FFFFFF !important;
   border: 1px solid #EEEEEE !important;

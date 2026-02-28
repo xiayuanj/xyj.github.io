@@ -81,7 +81,7 @@ author:
   padding-left: 0 !important;
 }
 .post-content li {
-  margin-bottom: 12px !important;
+  margin-bottom: 8px !important;
   line-height: 1.7 !important;
 }
 /* 统一科研项目符号的缩进和样式 */

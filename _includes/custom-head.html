@@ -5,7 +5,7 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 全局统一：导航栏重制 + 全页面布局/留白/样式完全同步 -->
+<!-- 全局统一：字号放大优化 + 导航栏重制 + 标题间隔修复 + 全页面布局同步 -->
 <style>
 /* ========== 1. 全局基础：全页面统一纯白背景 + 布局重置 ========== */
 body,
@@ -44,7 +44,7 @@ html {
 .site-header .site-title {
   margin: 0 !important;
   padding: 0 !important;
-  font-size: 24px !important;
+  font-size: 26px !important; /* 从24px放大到26px */
   font-weight: 600 !important;
   font-style: italic; /* 保留你原有的斜体风格 */
 }
@@ -69,7 +69,7 @@ html {
 .site-nav a, .site-nav .dropbtn {
   color: #5A5A5A !important; /* 参考图的浅灰色文字 */
   background-color: transparent !important;
-  font-size: 17px !important;
+  font-size: 18px !important; /* 从17px放大到18px */
   font-weight: 500 !important;
   text-decoration: none !important;
   margin-left: 28px !important; /* 导航项之间的间距，和参考图一致 */
@@ -134,7 +134,7 @@ html {
   box-sizing: border-box !important;
 }
 
-/* ========== 3. 全页面内容样式统一 ========== */
+/* ========== 3. 全页面内容样式统一【字号放大优化】 ========== */
 .post-excerpt,
 .post-content,
 .page-content,
@@ -150,33 +150,49 @@ html {
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
 }
+
+/* 正文内容：字号放大 */
 .post-excerpt p, .post-excerpt li,
 .post-content p, .post-content li,
 .page-content p, .page-content li {
-  font-size: 16px !important;
-  margin: 0 0 12px 0 !important;
+  font-size: 17px !important; /* 从16px放大到17px，想要更大改成18px */
+  margin: 0 0 20px 0 !important;
   padding: 0 !important;
 }
-.post-excerpt h1, .post-excerpt h2, .post-excerpt h3,
-.post-content h1, .post-content h2, .post-content h3,
-.page-content h1, .page-content h2, .page-content h3,
+
+/* 一级大标题：字号放大 */
+.post-excerpt h1, .post-content h1, .page-content h1,
 .post-title, .page-title {
   color: #092B42 !important;
   border-bottom: none !important;
   text-decoration: none !important;
   box-shadow: none !important;
   font-weight: 600 !important;
-}
-.post-excerpt h1, .post-content h1, .page-content h1, .post-title {
-  font-size: 24px !important;
+  font-size: 26px !important; /* 从24px放大到26px */
   margin: 0 0 15px 0 !important;
 }
-.post-excerpt h2, .post-content h2, .page-content h2 {
-  font-size: 20px !important;
-  margin: 25px 0 10px 0 !important;
+
+/* 二级章节标题（教育经历/科研成果）：字号放大 + 顶部空行 */
+.site-main .post-excerpt h2,
+.site-main .post-content h2,
+.site-main .page-content h2 {
+  color: #092B42 !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  font-size: 22px !important; /* 从20px放大到22px */
+  margin: 45px 0 12px 0 !important;
 }
+
+/* 三级小标题：字号放大 */
 .post-excerpt h3, .post-content h3, .page-content h3 {
-  font-size: 18px !important;
+  color: #092B42 !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  font-size: 19px !important; /* 从18px放大到19px */
   margin: 20px 0 8px 0 !important;
 }
 
@@ -208,11 +224,12 @@ table td,
 table th, table td {
   border: 1px solid #EEEEEE !important;
   padding: 12px 8px !important;
+  font-size: 17px !important; /* 表格内文字同步放大 */
 }
 .post-excerpt th, .post-content th, .page-content th {
   color: #092B42 !important;
   border-bottom: 2px solid #EEEEEE !important;
-  font-size: 22px !important;
+  font-size: 22px !important; /* 表格标题同步放大 */
   font-weight: 700 !important;
 }
 
@@ -225,7 +242,7 @@ hr {
   border-bottom: none !important;
 }
 
-/* ========== 4. 侧边栏内容美化 ========== */
+/* ========== 4. 侧边栏内容美化 + 字号同步放大 ========== */
 .site-sidebar .author-avatar img {
   width: 160px !important;
   height: 160px !important;
@@ -235,21 +252,21 @@ hr {
   object-fit: cover !important;
 }
 .site-sidebar .author-name {
-  font-size: 22px !important;
+  font-size: 24px !important; /* 从22px放大到24px */
   font-weight: 700 !important;
   color: #092B42 !important;
   text-align: center !important;
   margin-bottom: 10px !important;
 }
 .site-sidebar .author-bio {
-  font-size: 15px !important;
+  font-size: 16px !important; /* 从15px放大到16px */
   color: #666 !important;
   text-align: center !important;
   margin-bottom: 20px !important;
   line-height: 1.6 !important;
 }
 .site-sidebar .author-contact {
-  font-size: 14px !important;
+  font-size: 15px !important; /* 从14px放大到15px */
   line-height: 1.8 !important;
   padding-left: 15px !important;
 }
@@ -264,6 +281,7 @@ hr {
   list-style: none !important;
   padding-left: 10px !important;
   margin-top: 30px !important;
+  font-size: 15px !important; /* 目录文字同步放大 */
 }
 .site-sidebar .table-of-contents li {
   border-bottom: 1px solid #EEEEEE !important;
@@ -277,9 +295,9 @@ hr {
   color: #0066CC !important;
 }
 
-/* ========== 5. 文章元信息样式统一 ========== */
+/* ========== 5. 文章元信息样式统一 + 字号放大 ========== */
 .post-meta {
-  font-size: 14px !important;
+  font-size: 15px !important; /* 从14px放大到15px */
   color: #666 !important;
   margin: 0 0 20px 0 !important;
 }
@@ -301,7 +319,7 @@ hr {
   }
   .site-nav a, .site-nav .dropbtn {
     margin: 0 10px !important;
-    font-size: 15px !important;
+    font-size: 16px !important; /* 移动端字号适配 */
   }
   .site-body.wrapper {
     flex-direction: column !important;
@@ -320,9 +338,16 @@ hr {
     max-width: 100% !important;
     padding: 0 10px !important;
   }
-  .post-excerpt td, .post-content td, .page-content td {
-    font-size: 14px !important;
-    padding: 8px 4px !important;
+  .post-excerpt p, .post-excerpt li,
+  .post-content p, .post-content li,
+  .page-content p, .page-content li {
+    font-size: 16px !important; /* 移动端字号适配 */
+  }
+  .site-main .post-excerpt h2,
+  .site-main .post-content h2,
+  .site-main .page-content h2 {
+    margin-top: 30px !important;
+    font-size: 20px !important; /* 移动端字号适配 */
   }
 }
 

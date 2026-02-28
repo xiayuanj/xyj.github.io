@@ -1,12 +1,23 @@
 ---
-layout: post
+layout: page
+title: "荣誉与奖项"
+categories: misc
 ---
 
-Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in, no choro sadipscing repudiandae vix. Vis in euismod delenit dignissim. Ex quod nostrum sit, suas decore animal id ius, nobis solet detracto quo te.
+· 博士研究生国家奖学金，2024，颁发单位：中华人民共和国教育部
 
-{% comment %}
-Might you have an include in your theme? Why not try it here!
-{% include my-themes-great-include.html %}
-{% endcomment %}
+· 硕士研究生国家奖学金，2021，颁发单位：中华人民共和国教育部
 
-No laudem altera adolescens has, volumus lucilius eum no. Eam ei nulla audiam efficiantur. Suas affert per no, ei tale nibh sea. Sea ne magna harum, in denique scriptorem sea, cetero alienum tibique ei eos. Labores persequeris referrentur eos ei.
+· 中国计算机大赛之网络技术大赛华中赛区三等奖（担任队长），2020，颁发单位：全国高等学校计算机教育研究会
+
+· 博士研究生一等学业奖学金，2022、2023、2024、2025，颁发单位：桂林电子科技大学
+
+· 硕士研究生一等学业奖学金、二等学业奖学金，2019、2020，颁发单位：武汉纺织大学
+
+· 武汉纺织大学优秀研究生，2022，颁发单位：武汉纺织大学
+
+· 武汉纺织大学优秀毕业生，2022，颁发单位：武汉纺织大学
+
+· 周口师范学院校级ACM优秀奖，2016，颁发单位：周口师范学院
+
+· 周口师范学院优秀学生干部，2017、2018，颁发单位：周口师范学院

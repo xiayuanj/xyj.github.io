@@ -5,11 +5,11 @@ layout: default
 <div class="home">
   {{ content }}
 
-  <!-- 新增：最高优先级样式 - 强制缩小期刊论文等二级标题 -->
+  <!-- 新增：最高优先级样式 - 强制缩小期刊论文等二级标题 + 间距 + 链接样式 -->
   <style>
     /* ！最高优先级：覆盖主题默认样式，精准定位文章内的h2 */
     .post-list .post-excerpt h2 {
-      font-size: 18px !important;    /* 核心：进一步缩小，比教育经历标题略大/持平 */
+      font-size: 18px !important;    /* 核心：缩小期刊论文标题 */
       font-weight: 600 !important;   /* 取消过粗，更协调 */
       color: #333333 !important;    /* 改为深灰，弱化视觉占比 */
       margin: 20px 0 10px 0 !important; /* 缩小上下间距 */
@@ -22,6 +22,31 @@ layout: default
     }
     .post-list .post-excerpt h3 {
       font-size: 17px !important;
+    }
+
+    /* ========== 新增1：论文条目间距（参考图核心效果） ========== */
+    .post-list .post-excerpt p {
+      margin: 0 0 15px 0 !important; /* 每条论文底部留15px间距，实现均匀分隔 */
+      padding: 0 !important;
+      line-height: 1.7 !important;   /* 行高适配，阅读更舒适 */
+      text-align: justify !important;/* 正文两端对齐，更规整 */
+    }
+    /* 专利/项目列表条目也补充间距，保持统一 */
+    .post-list .post-excerpt li {
+      margin: 0 0 15px 0 !important;
+      line-height: 1.7 !important;
+    }
+
+    /* ========== 新增2：可跳转链接样式（参考图蓝色可点击效果） ========== */
+    .post-list .post-excerpt a {
+      color: #0066CC !important;    /* 学术蓝，和参考图一致 */
+      text-decoration: none !important; /* 默认无下划线，更清爽 */
+      font-weight: 500 !important;   /* 轻微加粗，突出可点击 */
+    }
+    /* 鼠标悬浮时显示下划线，提示可点击 */
+    .post-list .post-excerpt a:hover {
+      text-decoration: underline !important;
+      color: #004499 !important;    /* 悬浮时加深蓝色，交互更明显 */
     }
   </style>
   

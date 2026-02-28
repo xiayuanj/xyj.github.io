@@ -5,63 +5,81 @@ layout: default
 <div class="home">
   {{ content }}
 
-  <!-- 新增：最高优先级样式 - 强制缩小期刊论文等二级标题 + 间距 + 链接样式 + 科研风字体 -->
+  <!-- 整合所有样式需求：移除横线 + 字体设置 + 标题/间距/链接样式 -->
   <style>
-    /* ========== 核心：英文采用zero-shot同款无衬线字体（科研技术风） ========== */
-    /* 全局文本（英文+中文）字体适配，优先西文无衬线，中文改为思源黑体 */
+    /* ========== 核心1：强制移除所有自动生成的横线（优先级最高） ========== */
+    /* 移除列表项/段落/标题下方的边框/阴影横线 */
+    .post-list li,
+    .post-list .post-excerpt li,
+    .post-list .post-excerpt p,
+    .post-list .post-excerpt h2,
+    .post-list .post-excerpt h3 {
+      border-bottom: none !important;
+      box-shadow: none !important;
+      background-image: none !important;
+      border-top: none !important;
+    }
+    /* 移除页面中所有hr水平线标签 */
+    .post-list .post-excerpt hr {
+      display: none !important;
+      border: none !important;
+    }
+    /* 移除post-list容器的默认分隔线 */
+    .post-list {
+      border: none !important;
+    }
+
+    /* ========== 核心2：字体设置（英文科研风 + 中文思源黑体） ========== */
+    /* 全局文本：英文优先无衬线科研字体，中文优先思源黑体 */
     .post-list .post-excerpt,
     .post-list .post-excerpt * {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Source Han Sans CN", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
-      /* 中文优先使用思源黑体，兼容所有系统 */
     }
-    /* 英文标题/链接强化：更贴合技术文档风格 */
+    /* 英文标题/链接强化：纯西文用更贴合的技术字体 */
     .post-list .post-excerpt a,
     .post-list .post-excerpt h2,
     .post-list .post-excerpt h3 {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-      font-weight: 500 !important; /* 中等字重，和zero-shot风格一致 */
+      font-weight: 500 !important;
     }
 
-    /* ========== 原有样式：标题字号控制 ========== */
+    /* ========== 核心3：标题样式优化（缩小二级标题，协调视觉） ========== */
     .post-list .post-excerpt h2 {
-      font-size: 18px !important;    /* 核心：缩小期刊论文标题 */
-      font-weight: 600 !important;   /* 取消过粗，更协调 */
-      color: #333333 !important;    /* 改为深灰，弱化视觉占比 */
-      margin: 20px 0 10px 0 !important; /* 缩小上下间距 */
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      color: #333333 !important;
+      margin: 20px 0 10px 0 !important;
       line-height: 1.2 !important;
-    }
-    /* 兜底：确保正文和其他标题层级清晰 */
-    .post-list .post-excerpt p,
-    .post-list .post-excerpt li {
-      font-size: 16px !important;
     }
     .post-list .post-excerpt h3 {
       font-size: 17px !important;
     }
-
-    /* ========== 新增1：论文条目间距（参考图核心效果） ========== */
-    .post-list .post-excerpt p {
-      margin: 0 0 15px 0 !important; /* 每条论文底部留15px间距，实现均匀分隔 */
-      padding: 0 !important;
-      line-height: 1.7 !important;   /* 行高适配，阅读更舒适 */
-      text-align: justify !important;/* 正文两端对齐，更规整 */
+    .post-list .post-excerpt p,
+    .post-list .post-excerpt li {
+      font-size: 16px !important;
     }
-    /* 专利/项目列表条目也补充间距，保持统一 */
+
+    /* ========== 核心4：条目间距优化（均匀分隔，提升可读性） ========== */
+    .post-list .post-excerpt p {
+      margin: 0 0 15px 0 !important;
+      padding: 0 !important;
+      line-height: 1.7 !important;
+      text-align: justify !important;
+    }
     .post-list .post-excerpt li {
       margin: 0 0 15px 0 !important;
       line-height: 1.7 !important;
     }
 
-    /* ========== 新增2：可跳转链接样式（参考图蓝色可点击效果） ========== */
+    /* ========== 核心5：链接样式（学术蓝 + 悬浮下划线） ========== */
     .post-list .post-excerpt a {
-      color: #0066CC !important;    /* 学术蓝，和参考图一致 */
-      text-decoration: none !important; /* 默认无下划线，更清爽 */
-      font-weight: 500 !important;   /* 轻微加粗，突出可点击 */
+      color: #0066CC !important;
+      text-decoration: none !important;
+      font-weight: 500 !important;
     }
-    /* 鼠标悬浮时显示下划线，提示可点击 */
     .post-list .post-excerpt a:hover {
       text-decoration: underline !important;
-      color: #004499 !important;    /* 悬浮时加深蓝色，交互更明显 */
+      color: #004499 !important;
     }
   </style>
   

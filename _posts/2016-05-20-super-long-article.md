@@ -8,90 +8,85 @@ author:
   - 夏元俊
 ---
 
-<!-- 核心样式：提前定义字号层级，确保全局统一 -->
+## 期刊论文
+
+[1] Xia Yuanjun, Tan Zhiyuan, Li Meng, Zhang Pengfei, Yu Lele, Dong Shi, Liu Yining*. Communication-Efficient and Byzantine-Tolerant Federated Learning for Mobile Edge Computing[J], IEEE Transactions on Mobile Computing（返修中）
+
+[2] Xia Yuanjun, Zhang Pengfei*, Zhang Zuoli, Meng Weizhi, Li Meng, Dong Shi, Liu Yining*. Verifiable and Byzantine-Robust Differential Private Federated Learning [J], IEEE Transactions on Dependable and Secure Computing（返修中）
+
+[3] Xia Yuanjun, Liu Yining*, Dong Shi, Li Meng, Guo Cheng. SVCA: Secure and Verifiable Chained Aggregation for Privacy-Preserving Federated Learning[J], IEEE Internet of Things Journal, 11(10): 18351-18365, 2024 （2024年中科院一区TOP，CCF C）
+
+[4] Xia Yuanjun, Liu Yining, Cheng Jingxue, Liang Yangfan, Khan Fazlullah*, Alturki Ryan, Wang Xiaopei. TEVA: Training-Efficient and Verifiable Aggregation for Federated Learning for Consumer Electronics in Industry 5.0[J]. IEEE Transactions on Consumer Electronics, 71(2):4248-4264, 2025. （中科院二区）
+
+[5] 夏元俊,黎利辉,任舒扬,余乐乐,刘忆宁*.面向VANETs身份持续认证的隐私保护联邦学习方案[J].电讯技术,65(07):1007-1015,2025.（北大中文核心）
+
+[6] Dong Shi, Xia Yuanjun*, Wang Tao. Network Abnormal Traffic Detection Framework Based on Deep Reinforcement Learning [J], IEEE Wireless Communication, 31(3): 185-193, 2024. （2024年中科院一区TOP，通信作者）
+
+[7] Dong Shi*, Xia Yuanjun, Peng Tao. Network abnormal traffic detection model based on semi-supervised deep reinforcement learning[J]. IEEE Transactions on Network and Service Management, 18(4): 4197-4212, 2021. (中科院二区，CCF C, 导师第一，谷歌学术引用量 223)
+
+[8] Dong Shi*, Xia Yuanjun. Network traffic identification in packet sampling environment[J]. Digital Communications and Networks, 9(4):957-970, 2023. (中科院一区, 导师第一)
+
+[9] Dong Shi*, Xia Yuanjun, Kamruzzaman Joarder. Quantum Particle Swarm Optimization for Task Offloading in Mobile Edge Computing [J]. IEEE Transactions on Industrial Informatics, 19(8): 9113-9122, 2023.（中科院一区，CCF C, 导师第一，谷歌学术引用量 92）
+
+[10] Dong Shi*, Xia Yuanjun, Peng Tao. Traffic identification model based on generative adversarial deep convolutional network[J]. Annals of Telecommunications, 77(9): 573-587, 2022. (中科院四区, 导师第一)
+
+[11] Dong Shi, Su Huadong, Xia Yuanjun, Zhu Fei*, Hu Xinrong, Wang Bangcao. A Comprehensive Survey on Authentication and Attack Detection Schemes That Threaten It in Vehicular Ad-Hoc Networks[J]. IEEE Transactions on Intelligent Transportation Systems, 24(12): 13573-13602, 2023. （2023年中科院一区TOP，CCF B）
+
+[12] Liang Yangfan, Liu Gao, Zhang Xianchao, Chen Yiming, Chen Jingxue, Xia Yuanjun, Liu Yining. Fully Anonymous Broadcast Signcryption for Secure Health Data Transmission in WBANs[J]. IEEE Transactions on Mobile Computing, 25(2):1729-1743, 2026. （中科院一区TOP，CCF A）
+
+[13] Dong Shi, Shu Longhui, Xia Qingyu, Kamruzzaman Joarder, Xia Yuanjun, Peng Tao. Device Identification Method for Internet of Things Based on Spatial-Temporal Feature Residuals[J]. IEEE Transactions on Services Computing, 17(6):3400-3416, 2024. （中科院一区TOP，CCF A）
+
+[14] Zhao Zhiqiang, Hu Xuexian, Liu Yining, Wei Jianghong, Xia Yuanjun, Liang Yangfan. SECP-AKE: Secure and efficient certificateless-password-based authenticated key exchange protocol for smart healthcare systems[J]. IEEE Transactions on Services Computing, 17(6):3400-3416, 2024. （中科院三区，CCF B）
+
+## 会议论文
+
+[1] Xia Yuanjun, Dong Shi*, Peng Tao, Wang Tao. Wireless Network Abnormal Traffic Detection Method Based on Deep Transfer Reinforcement Learning[C]. 2021 17th International Conference on Mobility, Sensing and Networking (MSN), 528-535, 2021. (CCF C)
+
+## 专利成果
+
+· 董仕，夏元俊，于来行，张锦华，鲁硕，赵文清，夏钦宇.基于深度迁移强化学习无线网络异常流量检测方法：CN202110866421.2[P].2023-04-07.（授权）
+
+· 董仕，夏元俊.基于区块链的边缘计算安全系统：CN202011042708.5[P].2022-08-12.（授权）
+
+· 夏元俊，董仕，彭涛.基于生成对抗深度卷积网络的流量识别方法：CN202110160578.3[P].2021-06-01.（公开）
+
+· 董仕，夏元俊.一种SSDDQN的网络异常流量检测方法：CN202110271456.1[P].2021-06-29.（公开）
+
+· 董仕，夏元俊.一种网络入侵检测方法、装置及设备：CN202110450303.3[P].2021-07-27.（公开）
+
+· 夏钦宇，董仕，夏元俊，彭涛.一种基于会话时空特征相残差的物联网设备识别模型：CN202210695834.3[P].2022-11-11.（公开）
+
+## 科研项目
+
+➢ 桂林电子科技大学，研究生科研创新项目，2023YCXB07，联邦学习中的隐私保护聚合方法研究，2023-03至2025-03，2万元，结项，主持
+
+➢ 温州市科技局，温州市重大科技创新攻关项目，ZG2023028，数据要素与可信流通关键技术研究，2024-01至2026-12-31，300万元，在研，参与（8/9）
+
+➢ 广西师范大学，教育部教育区块链与智能技术重点实验室研究项目，EBME24-F-M-03，具有隐私保护的教育数据跨孤岛联邦学习研究，2024-05 至 2026-04，4万元，在研，参与（2/5）
+
+➢ 广西壮族自治区信息中心，数字广西智慧基础设施联合创新实验室开放课题任务，GXDIOP2023003，面向智慧城市数据要素的隐私计算关键技术研究，2024-01至 2025-12，20万元，在研，参与（6/11）
+
+➢ 河南省教育厅，河南省教育厅科学技术研究重点项目，多视角特征降维技术在图像分类中的应用研究，22A520052，多视角特征降维技术在图像分类中的应用研究，2022-01至 2023-12，3万元，结项，参与（6/6）
+
 <style>
-/* 1. 二级标题（期刊论文/会议论文等）：24px（比主页h2小，比正文大） */
-.post-content .section-title {
-  font-size: 24px !important;
-  color: #092B42 !important;
-  font-weight: 600 !important;
-  margin: 30px 0 15px 0 !important;
-  padding: 0 !important;
-}
-/* 2. 正文（论文/专利/项目内容）：16px（基础字号） */
-.post-content .content-text {
-  font-size: 16px !important;
+/* 让每篇论文/专利/项目自动换行、不重叠、间距正常 */
+.post-content p {
+  margin: 0 0 8px 0 !important;
   line-height: 1.7 !important;
-  margin: 0 0 12px 0 !important;
   text-align: justify !important;
 }
-/* 3. 优化列表样式（专利/项目），保持学术风格 */
+/* 优化专利/项目列表的项目符号样式，更贴合学术风格 */
 .post-content ul {
   list-style: none !important;
   padding-left: 0 !important;
-  margin: 0 !important;
 }
 .post-content li {
-  font-size: 16px !important;
-  line-height: 1.7 !important;
   margin-bottom: 12px !important;
+  line-height: 1.7 !important;
 }
-/* 4. 统一项目符号样式，避免多余缩进 */
-.post-content .content-text::before,
-.post-content li::before {
+/* 统一科研项目符号的缩进和样式 */
+.post-content p::before {
   content: "" !important;
   margin-right: 0 !important;
 }
-/* 5. 专利列表的圆点符号还原（保持原有风格） */
-.post-content .patent-item::before {
-  content: "· " !important;
-  margin-right: 4px !important;
-}
-/* 6. 科研项目的箭头符号还原 */
-.post-content .project-item::before {
-  content: "➢ " !important;
-  margin-right: 4px !important;
-}
 </style>
-
-<!-- 期刊论文（二级标题：24px） -->
-<h2 class="section-title">期刊论文</h2>
-<p class="content-text">[1] Xia Yuanjun, Tan Zhiyuan, Li Meng, Zhang Pengfei, Yu Lele, Dong Shi, Liu Yining*. Communication-Efficient and Byzantine-Tolerant Federated Learning for Mobile Edge Computing[J], IEEE Transactions on Mobile Computing（返修中）</p>
-<p class="content-text">[2] Xia Yuanjun, Zhang Pengfei*, Zhang Zuoli, Meng Weizhi, Li Meng, Dong Shi, Liu Yining*. Verifiable and Byzantine-Robust Differential Private Federated Learning [J], IEEE Transactions on Dependable and Secure Computing（返修中）</p>
-<p class="content-text">[3] Xia Yuanjun, Liu Yining*, Dong Shi, Li Meng, Guo Cheng. SVCA: Secure and Verifiable Chained Aggregation for Privacy-Preserving Federated Learning[J], IEEE Internet of Things Journal, 11(10): 18351-18365, 2024 （2024年中科院一区TOP，CCF C）</p>
-<p class="content-text">[4] Xia Yuanjun, Liu Yining, Cheng Jingxue, Liang Yangfan, Khan Fazlullah*, Alturki Ryan, Wang Xiaopei. TEVA: Training-Efficient and Verifiable Aggregation for Federated Learning for Consumer Electronics in Industry 5.0[J]. IEEE Transactions on Consumer Electronics, 71(2):4248-4264, 2025. （中科院二区）</p>
-<p class="content-text">[5] 夏元俊,黎利辉,任舒扬,余乐乐,刘忆宁*.面向VANETs身份持续认证的隐私保护联邦学习方案[J].电讯技术,65(07):1007-1015,2025.（北大中文核心）</p>
-<p class="content-text">[6] Dong Shi, Xia Yuanjun*, Wang Tao. Network Abnormal Traffic Detection Framework Based on Deep Reinforcement Learning [J], IEEE Wireless Communication, 31(3): 185-193, 2024. （2024年中科院一区TOP，通信作者）</p>
-<p class="content-text">[7] Dong Shi*, Xia Yuanjun, Peng Tao. Network abnormal traffic detection model based on semi-supervised deep reinforcement learning[J]. IEEE Transactions on Network and Service Management, 18(4): 4197-4212, 2021. (中科院二区，CCF C, 导师第一，谷歌学术引用量 223)</p>
-<p class="content-text">[8] Dong Shi*, Xia Yuanjun. Network traffic identification in packet sampling environment[J]. Digital Communications and Networks, 9(4):957-970, 2023. (中科院一区, 导师第一)</p>
-<p class="content-text">[9] Dong Shi*, Xia Yuanjun, Kamruzzaman Joarder. Quantum Particle Swarm Optimization for Task Offloading in Mobile Edge Computing [J]. IEEE Transactions on Industrial Informatics, 19(8): 9113-9122, 2023.（中科院一区，CCF C, 导师第一，谷歌学术引用量 92）</p>
-<p class="content-text">[10] Dong Shi*, Xia Yuanjun, Peng Tao. Traffic identification model based on generative adversarial deep convolutional network[J]. Annals of Telecommunications, 77(9): 573-587, 2022. (中科院四区, 导师第一)</p>
-<p class="content-text">[11] Dong Shi, Su Huadong, Xia Yuanjun, Zhu Fei*, Hu Xinrong, Wang Bangcao. A Comprehensive Survey on Authentication and Attack Detection Schemes That Threaten It in Vehicular Ad-Hoc Networks[J]. IEEE Transactions on Intelligent Transportation Systems, 24(12): 13573-13602, 2023. （2023年中科院一区TOP，CCF B）</p>
-<p class="content-text">[12] Liang Yangfan, Liu Gao, Zhang Xianchao, Chen Yiming, Chen Jingxue, Xia Yuanjun, Liu Yining. Fully Anonymous Broadcast Signcryption for Secure Health Data Transmission in WBANs[J]. IEEE Transactions on Mobile Computing, 25(2):1729-1743, 2026. （中科院一区TOP，CCF A）</p>
-<p class="content-text">[13] Dong Shi, Shu Longhui, Xia Qingyu, Kamruzzaman Joarder, Xia Yuanjun, Peng Tao. Device Identification Method for Internet of Things Based on Spatial-Temporal Feature Residuals[J]. IEEE Transactions on Services Computing, 17(6):3400-3416, 2024. （中科院一区TOP，CCF A）</p>
-<p class="content-text">[14] Zhao Zhiqiang, Hu Xuexian, Liu Yining, Wei Jianghong, Xia Yuanjun, Liang Yangfan. SECP-AKE: Secure and efficient certificateless-password-based authenticated key exchange protocol for smart healthcare systems[J]. IEEE Transactions on Services Computing, 17(6):3400-3416, 2024. （中科院三区，CCF B）</p>
-
-<!-- 会议论文（二级标题：24px） -->
-<h2 class="section-title">会议论文</h2>
-<p class="content-text">[1] Xia Yuanjun, Dong Shi*, Peng Tao, Wang Tao. Wireless Network Abnormal Traffic Detection Method Based on Deep Transfer Reinforcement Learning[C]. 2021 17th International Conference on Mobility, Sensing and Networking (MSN), 528-535, 2021. (CCF C)</p>
-
-<!-- 专利成果（二级标题：24px） -->
-<h2 class="section-title">专利成果</h2>
-<ul>
-  <li class="patent-item content-text">董仕，夏元俊，于来行，张锦华，鲁硕，赵文清，夏钦宇.基于深度迁移强化学习无线网络异常流量检测方法：CN202110866421.2[P].2023-04-07.（授权）</li>
-  <li class="patent-item content-text">董仕，夏元俊.基于区块链的边缘计算安全系统：CN202011042708.5[P].2022-08-12.（授权）</li>
-  <li class="patent-item content-text">夏元俊，董仕，彭涛.基于生成对抗深度卷积网络的流量识别方法：CN202110160578.3[P].2021-06-01.（公开）</li>
-  <li class="patent-item content-text">董仕，夏元俊.一种SSDDQN的网络异常流量检测方法：CN202110271456.1[P].2021-06-29.（公开）</li>
-  <li class="patent-item content-text">董仕，夏元俊.一种网络入侵检测方法、装置及设备：CN202110450303.3[P].2021-07-27.（公开）</li>
-  <li class="patent-item content-text">夏钦宇，董仕，夏元俊，彭涛.一种基于会话时空特征相残差的物联网设备识别模型：CN202210695834.3[P].2022-11-11.（公开）</li>
-</ul>
-
-<!-- 科研项目（二级标题：24px） -->
-<h2 class="section-title">科研项目</h2>
-<ul>
-  <li class="project-item content-text">桂林电子科技大学，研究生科研创新项目，2023YCXB07，联邦学习中的隐私保护聚合方法研究，2023-03至2025-03，2万元，结项，主持</li>
-  <li class="project-item content-text">温州市科技局，温州市重大科技创新攻关项目，ZG2023028，数据要素与可信流通关键技术研究，2024-01至2026-12-31，300万元，在研，参与（8/9）</li>
-  <li class="project-item content-text">广西师范大学，教育部教育区块链与智能技术重点实验室研究项目，EBME24-F-M-03，具有隐私保护的教育数据跨孤岛联邦学习研究，2024-05 至 2026-04，4万元，在研，参与（2/5）</li>
-  <li class="project-item content-text">广西壮族自治区信息中心，数字广西智慧基础设施联合创新实验室开放课题任务，GXDIOP2023003，面向智慧城市数据要素的隐私计算关键技术研究，2024-01至 2025-12，20万元，在研，参与（6/11）</li>
-  <li class="project-item content-text">河南省教育厅，河南省教育厅科学技术研究重点项目，多视角特征降维技术在图像分类中的应用研究，22A520052，多视角特征降维技术在图像分类中的应用研究，2022-01至 2023-12，3万元，结项，参与（6/6）</li>
-</ul>

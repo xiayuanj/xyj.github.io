@@ -5,125 +5,124 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
-<!-- 核心保留：拓宽页面+表格基础优化 | 修复：移除丑的卡片/阴影，回归极简学术风 -->
+<!-- 核心保留：拓宽页面+表格基础优化 | 最终修复：全页面统一纯白背景 -->
 <style>
-/* ========== 原有核心功能：拓宽页面（完全保留，仅微调留白更舒适） ========== */
-.wrapper {
-  max-width: 1200px !important; /* 保留宽幅，不拥挤 */
-  padding-left: 30px !important; /* 增加左留白，更透气 */
-  padding-right: 30px !important;
-  margin: 0 auto !important; /* 页面居中 */
+/* ========== 1. 全局基础：全页面统一纯白背景 ========== */
+body,
+html {
+  background-color: #FFFFFF !important;
+  color: #333333 !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* ========== 原有核心功能：表格尺寸/内边距优化（完全保留） ========== */
-.post-excerpt table, .post-content table {
-  width: 100% !important; /* 表格占满宽幅 */
-  margin: 25px 0 !important; /* 上下留白 */
-  border-collapse: collapse !important; /* 合并边框，不杂乱 */
+/* ========== 2. 导航栏：彻底改为纯白，无阴影/杂色 ========== */
+.site-header,
+.site-nav,
+.dropdown-content {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #EEEEEE !important; /* 仅保留极细分隔线 */
+  box-shadow: none !important; /* 彻底删除阴影 */
+}
+.site-nav a, .dropbtn {
+  color: #333333 !important;
+}
+.site-nav a:hover, .current-page {
+  color: #0066CC !important;
 }
 
-.post-excerpt td, .post-content td {
-  padding: 12px 8px !important; /* 单元格内边距 */
-  font-size: 16px !important; /* 字体大小 */
+/* ========== 3. 侧边栏：纯白背景，无任何杂色/边框 ========== */
+.sidebar,
+.sidebar .table-of-contents,
+.sidebar .table-of-contents li,
+.sidebar .table-of-contents a {
+  background-color: #FFFFFF !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  color: #666666 !important;
+}
+.sidebar .table-of-contents li {
+  border-bottom: 1px solid #EEEEEE !important; /* 仅保留目录分隔线 */
 }
 
+/* ========== 4. 正文区域：纯白背景，无圆角/阴影 ========== */
+.post-content, .content {
+  background-color: #FFFFFF !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* ========== 5. 表格：彻底纯白，仅保留浅灰分隔线 ========== */
+table,
+table tr,
+table tr:nth-child(odd),  /* 修复奇偶行异色问题 */
+table tr:nth-child(even),
+table th,
+table td,
+.post-excerpt table, 
+.post-content table {
+  background-color: #FFFFFF !important;
+  color: #333333 !important;
+  border-collapse: collapse !important;
+}
+table th, table td {
+  border: 1px solid #EEEEEE !important; /* 仅保留浅灰边框，无杂色 */
+  padding: 12px 8px !important;
+}
 .post-excerpt th, .post-content th {
-  text-align: left !important;
-  padding-bottom: 10px !important;
+  color: #092B42 !important; /* 大标题颜色 #092B42 */
+  border-bottom: 2px solid #EEEEEE !important;
   font-size: 22px !important;
   font-weight: 700 !important;
 }
 
-/* ========== 修复核心：删除所有卡片/阴影，回归极简纯白（关键！） ========== */
-/* 1. 全局背景：还原纯净白色，告别显脏的浅米色 */
-body {
-  background-color: #FFFFFF !important;
-  color: #333333 !important; /* 柔和深灰文字，不生硬 */
-  line-height: 1.7 !important;
+/* ========== 6. 原有功能：拓宽页面（保留） ========== */
+.wrapper {
+  max-width: 1200px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  margin: 0 auto !important;
 }
 
-/* 2. 导航栏：还原极简，删除阴影/多余边框 */
-.site-header {
-  background-color: #FFFFFF !important;
-  border-bottom: 1px solid #EEEEEE !important; /* 仅保留极细浅灰下边框，不突兀 */
-  box-shadow: none !important; /* 彻底删除阴影 */
+/* ========== 7. 标题：强制改为 #092B42（最高优先级） ========== */
+h1, h2, h3, h4, h5, h6,
+.post-title, .page-title, .section h2,
+h2 a, h3 a, .post-list .post-title a {
+  color: #092B42 !important;
 }
 
-/* 3. 侧边栏：还原极简，删除卡片/阴影/边框 */
-.sidebar {
-  background-color: #FFFFFF !important;
-  border-right: none !important; /* 删除侧边栏右边框 */
-  box-shadow: none !important; /* 删除阴影 */
-}
-
-/* 4. 正文区域：还原极简，删除圆角卡片/阴影 */
-.post-content, .content {
-  background-color: #FFFFFF !important;
-  border-radius: 0 !important; /* 删除圆角 */
-  box-shadow: none !important; /* 彻底删除阴影 */
-  padding: 0 !important; /* 删除多余内边距，和页面留白统一 */
-}
-
-/* ========== 配色修复：统一学术风，删除杂乱颜色 ========== */
-/* 1. 标题：统一为 #092B42，专业沉稳 */
-h1, h2, h3, h4, h5, h6, .site-title, .section h2,
-.post-excerpt th, .post-content th {
-  color: #092B42 !important; /* 大标题颜色改为 #092B42 */
-  border-bottom: 2px solid #EEEEEE !important; /* 标题下划线改为极细浅灰，学术感强 */
-}
-
-/* 2. 链接：统一清爽青蓝色，删除多余样式 */
-a, .post-content a, .content a, .site-nav a:hover, .current-page {
-  color: #0066CC !important; /* 示例同款专业蓝色，不花哨 */
+/* ========== 8. 链接样式：统一蓝色，无杂色 ========== */
+a, .post-content a, .content a {
+  color: #0066CC !important;
   text-decoration: underline !important;
 }
-
 a:hover {
-  color: #004C99 !important; /* hover轻微加深，不突兀 */
+  color: #004C99 !important;
 }
 
-/* 3. 侧边栏文字：统一浅灰，不抢焦点 */
-.sidebar p, .sidebar .contact-links p {
-  color: #666666 !important;
-}
-
-/* ========== 响应式适配：保留原有逻辑，仅适配新样式 ========== */
+/* ========== 9. 响应式适配（保留） ========== */
 @media screen and (max-width: 768px) {
   .wrapper {
     max-width: 100% !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
-
   .post-excerpt td, .post-content td {
     font-size: 14px !important;
     padding: 8px 4px !important;
   }
-
-  /* 移动端侧边栏：仅加下边框，无其他样式 */
   .sidebar {
     border-bottom: 1px solid #EEEEEE !important;
     margin-bottom: 20px !important;
   }
 }
 
-/* ========== 最终修复：移除表格和侧边栏的色块背景，统一为白色 ========== */
-.post-content table,
-.post-content th,
-.post-content td,
-.sidebar .table-of-contents,
-.sidebar .table-of-contents li,
-.sidebar .table-of-contents a {
+/* ========== 10. 额外修复：标签云/按钮等杂色背景 ========== */
+.tag-cloud a, .btn, button {
   background-color: #FFFFFF !important;
+  border: 1px solid #EEEEEE !important;
   color: #333333 !important;
-}
-
-.post-content th,
-.post-content td {
-  border-bottom: 1px solid #EEEEEE !important;
-}
-
-.sidebar .table-of-contents li {
-  border-bottom: 1px solid #EEEEEE !important;
 }
 </style>

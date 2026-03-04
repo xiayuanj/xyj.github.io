@@ -14,34 +14,34 @@ author:
 
 [2] Xia Yuanjun, Zhang Pengfei*, Zhang Zuoli, Meng Weizhi, Li Meng, Dong Shi, Liu Yining*. [Verifiable and Byzantine-Robust Differential Private Federated Learning](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J], IEEE Transactions on Dependable and Secure Computing（返修中）
 
-[3] Xia Yuanjun, Liu Yining*, Dong Shi, Li Meng, Guo Cheng. [SVCA: Secure and Verifiable Chained Aggregation for Privacy-Preserving Federated Learning](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J], IEEE Internet of Things Journal, 11(10): 18351-18365, 2024 （2024年中科院一区TOP，CCF C）
+[3] Xia Yuanjun, Liu Yining*, Dong Shi, Li Meng, Guo Cheng. [SVCA: Secure and Verifiable Chained Aggregation for Privacy-Preserving Federated Learning](https://ieeexplore.ieee.org/document/10427553){:target="_blank"}[J], IEEE Internet of Things Journal, 11(10): 18351-18365, 2024 （2024年中科院一区TOP，CCF C）
 
-[4] Xia Yuanjun, Liu Yining, Cheng Jingxue, Liang Yangfan, Khan Fazlullah*, Alturki Ryan, Wang Xiaopei. [TEVA: Training-Efficient and Verifiable Aggregation for Federated Learning for Consumer Electronics in Industry 5.0](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J]. IEEE Transactions on Consumer Electronics, 71(2):4248-4264, 2025. （中科院二区）
+[4] Xia Yuanjun, Liu Yining, Cheng Jingxue, Liang Yangfan, Khan Fazlullah*, Alturki Ryan, Wang Xiaopei. [TEVA: Training-Efficient and Verifiable Aggregation for Federated Learning for Consumer Electronics in Industry 5.0](https://ieeexplore.ieee.org/document/10802951){:target="_blank"}[J]. IEEE Transactions on Consumer Electronics, 71(2):4248-4264, 2025. （中科院二区）
 
-[5] 夏元俊,黎利辉,任舒扬,余乐乐,刘忆宁*. [面向VANETs身份持续认证的隐私保护联邦学习方案](https://xxx.cnki.net/xxxxxx){:target="_blank"}[J].电讯技术,65(07):1007-1015,2025.（北大中文核心）
+[5] 夏元俊,黎利辉,任舒扬,余乐乐,刘忆宁*. [面向VANETs身份持续认证的隐私保护联邦学习方案](https://www.teleonline.cn/dxjsen/ch/reader/view_abstract.aspx?file_no=202507001&flag=1){:target="_blank"}[J].电讯技术,65(07):1007-1015,2025.（北大中文核心）
 
-[6] Dong Shi, Xia Yuanjun*, Wang Tao. [Network Abnormal Traffic Detection Framework Based on Deep Reinforcement Learning](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J], IEEE Wireless Communication, 31(3): 185-193, 2024. （2024年中科院一区TOP，通信作者）
+[6] Dong Shi, Xia Yuanjun*, Wang Tao. [Network Abnormal Traffic Detection Framework Based on Deep Reinforcement Learning](https://ieeexplore.ieee.org/document/10475841){:target="_blank"}[J], IEEE Wireless Communication, 31(3): 185-193, 2024. （2024年中科院一区TOP，通信作者）
 
-[7] Dong Shi*, Xia Yuanjun, Peng Tao. [Network abnormal traffic detection model based on semi-supervised deep reinforcement learning](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J]. IEEE Transactions on Network and Service Management, 18(4): 4197-4212, 2021. (中科院二区，CCF C, 导师第一，谷歌学术引用量 223)
+[7] Dong Shi*, Xia Yuanjun, Peng Tao. [Network abnormal traffic detection model based on semi-supervised deep reinforcement learning](https://ieeexplore.ieee.org/document/9577211){:target="_blank"}[J]. IEEE Transactions on Network and Service Management, 18(4): 4197-4212, 2021. (中科院二区，CCF C, 导师第一，谷歌学术引用量 223)
 
-[8] Dong Shi*, Xia Yuanjun. [Network traffic identification in packet sampling environment](https://www.sciencedirect.com/science/article/pii/Sxxxxxx){:target="_blank"}[J]. Digital Communications and Networks, 9(4):957-970, 2023. (中科院一区, 导师第一)
+[8] Dong Shi*, Xia Yuanjun. [Network traffic identification in packet sampling environment](https://www.sciencedirect.com/science/article/pii/S2352864822000098){:target="_blank"}[J]. Digital Communications and Networks, 9(4):957-970, 2023. (中科院一区, 导师第一)
 
-[9] Dong Shi*, Xia Yuanjun, Kamruzzaman Joarder. [Quantum Particle Swarm Optimization for Task Offloading in Mobile Edge Computing](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J]. IEEE Transactions on Industrial Informatics, 19(8): 9113-9122, 2023.（中科院一区，CCF C, 导师第一，谷歌学术引用量 92）
+[9] Dong Shi*, Xia Yuanjun, Kamruzzaman Joarder. [Quantum Particle Swarm Optimization for Task Offloading in Mobile Edge Computing](https://ieeexplore.ieee.org/document/9965599){:target="_blank"}[J]. IEEE Transactions on Industrial Informatics, 19(8): 9113-9122, 2023.（中科院一区，CCF C, 导师第一，谷歌学术引用量 92）
 
-[10] Dong Shi*, Xia Yuanjun, Peng Tao. [Traffic identification model based on generative adversarial deep convolutional network](https://link.springer.com/article/xxxxxx){:target="_blank"}[J]. Annals of Telecommunications, 77(9): 573-587, 2022. (中科院四区, 导师第一)
+[10] Dong Shi*, Xia Yuanjun, Peng Tao. [Traffic identification model based on generative adversarial deep convolutional network](https://link.springer.com/article/10.1007/s12243-021-00876-6){:target="_blank"}[J]. Annals of Telecommunications, 77(9): 573-587, 2022. (中科院四区, 导师第一)
 
-[11] Dong Shi, Su Huadong, Xia Yuanjun, Zhu Fei*, Hu Xinrong, Wang Bangcao. [A Comprehensive Survey on Authentication and Attack Detection Schemes That Threaten It in Vehicular Ad-Hoc Networks](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J]. IEEE Transactions on Intelligent Transportation Systems, 24(12): 13573-13602, 2023. （2023年中科院一区TOP，CCF B）
+[11] Dong Shi, Su Huadong, Xia Yuanjun, Zhu Fei*, Hu Xinrong, Wang Bangcao. [A Comprehensive Survey on Authentication and Attack Detection Schemes That Threaten It in Vehicular Ad-Hoc Networks](https://ieeexplore.ieee.org/document/10201386){:target="_blank"}[J]. IEEE Transactions on Intelligent Transportation Systems, 24(12): 13573-13602, 2023. （2023年中科院一区TOP，CCF B）
 
-[12] Liang Yangfan, Liu Gao, Zhang Xianchao, Chen Yiming, Chen Jingxue, Xia Yuanjun, Liu Yining. [Fully Anonymous Broadcast Signcryption for Secure Health Data Transmission in WBANs](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J]. IEEE Transactions on Mobile Computing, 25(2):1729-1743, 2026. （中科院一区TOP，CCF A）
+[12] Liang Yangfan, Liu Gao, Zhang Xianchao, Chen Yiming, Chen Jingxue, Xia Yuanjun, Liu Yining. [Fully Anonymous Broadcast Signcryption for Secure Health Data Transmission in WBANs](https://ieeexplore.ieee.org/document/11146934){:target="_blank"}[J]. IEEE Transactions on Mobile Computing, 25(2):1729-1743, 2026. （中科院一区TOP，CCF A）
 
-[13] Dong Shi, Shu Longhui, Xia Qingyu, Kamruzzaman Joarder, Xia Yuanjun, Peng Tao. [Device Identification Method for Internet of Things Based on Spatial-Temporal Feature Residuals](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J]. IEEE Transactions on Services Computing, 17(6):3400-3416, 2024. （中科院一区TOP，CCF A）
+[13] Dong Shi, Shu Longhui, Xia Qingyu, Kamruzzaman Joarder, Xia Yuanjun, Peng Tao. [Device Identification Method for Internet of Things Based on Spatial-Temporal Feature Residuals](https://ieeexplore.ieee.org/document/10643359){:target="_blank"}[J]. IEEE Transactions on Services Computing, 17(6):3400-3416, 2024. （中科院一区TOP，CCF A）
 
-[14] Zhao Zhiqiang, Hu Xuexian, Liu Yining, Wei Jianghong, Xia Yuanjun, Liang Yangfan. [SECP-AKE: Secure and efficient certificateless-password-based authenticated key exchange protocol for smart healthcare systems](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[J]. IEEE Transactions on Services Computing, 17(6):3400-3416, 2024. （中科院三区，CCF B）
+[14] Zhao Zhiqiang, Hu Xuexian, Liu Yining, Wei Jianghong, Xia Yuanjun, Liang Yangfan. [SECP-AKE: Secure and efficient certificateless-password-based authenticated key exchange protocol for smart healthcare systems](https://www.sciencedirect.com/science/article/abs/pii/S1383762125001572){:target="_blank"}[J]. IEEE Transactions on Services Computing, 17(6):3400-3416, 2024. （中科院三区，CCF B）
 
 
 ## 会议论文
 
-[1] Xia Yuanjun, Dong Shi*, Peng Tao, Wang Tao. [Wireless Network Abnormal Traffic Detection Method Based on Deep Transfer Reinforcement Learning](https://ieeexplore.ieee.org/document/xxxxxx){:target="_blank"}[C]. 2021 17th International Conference on Mobility, Sensing and Networking (MSN), 528-535, 2021. (CCF C)
+[1] Xia Yuanjun, Dong Shi*, Peng Tao, Wang Tao. [Wireless Network Abnormal Traffic Detection Method Based on Deep Transfer Reinforcement Learning](https://ieeexplore.ieee.org/document/9751576){:target="_blank"}[C]. 2021 17th International Conference on Mobility, Sensing and Networking (MSN), 528-535, 2021. (CCF C)
 
 
 ## 专利成果
